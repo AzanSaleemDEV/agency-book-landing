@@ -271,7 +271,7 @@ export function BookContents() {
                   boxShadow:       "0 8px 24px rgba(201,168,76,0.28)",
                 }}
               >
-                Start Reading â€” $9
+                Start Reading â€” $9.99
               </button>
 
               {/* Availability note */}
@@ -289,4 +289,5 @@ export function BookContents() {
     </>
   );
 }
+
 

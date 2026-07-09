@@ -5,7 +5,7 @@ const WHITE = "#FFFFFF";
 const bullets = [
   "Read by agency owners across 12+ countries â€” from solo operators to 20-person teams",
   "Covers the full agency lifecycle: foundation, client acquisition, scaling, and long-term legacy",
-  "Available in E-book (instant) and Hardcopy â€” both for $9",
+  "Available in E-book (instant) and Hardcopy â€” both for $9.99",
 ];
 
 export function BookHero() {
@@ -166,7 +166,7 @@ export function BookHero() {
                   style={{ backgroundColor: GOLD, color: NAVY }}
                   className="rounded-xl px-7 py-3.5 text-[15px] font-black tracking-wide shadow-lg transition-opacity hover:opacity-90"
                 >
-                  Get Your Copy â€” $9
+                  Get Your Copy â€” $9.99
                 </a>
 
                 <a
@@ -242,4 +242,5 @@ export function BookHero() {
     </>
   );
 }
+
 

@@ -241,7 +241,7 @@ export function LeadSection() {
                 boxShadow:       "0 8px 24px rgba(201,168,76,0.25)",
               }}
             >
-              Build My Pipeline â€” $9
+              Build My Pipeline â€” $9.99
             </a>
           </div>
         </div>
@@ -250,4 +250,5 @@ export function LeadSection() {
     </>
   );
 }
+
 

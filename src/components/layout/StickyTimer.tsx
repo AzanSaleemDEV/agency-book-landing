@@ -210,7 +210,7 @@ export function StickyTimer() {
               rel="noopener noreferrer"
               className="st-cta hidden sm:inline-block"
             >
-              Get the Book â€” $9&nbsp;â†’
+              Get the Book â€” $9.99&nbsp;â†’
             </a>
           </div>
 
@@ -222,4 +222,5 @@ export function StickyTimer() {
     </>
   );
 }
+
 

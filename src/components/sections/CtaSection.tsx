@@ -273,7 +273,7 @@ export function CtaSection() {
           >
             Hamid spent a decade and millions in real agency revenue building what&rsquo;s in this book.
             Every system was tested on real clients, in real markets, with real money on the line.
-            You&rsquo;re getting the distilled result for $9 â€” and there&rsquo;s no version of that trade that doesn&rsquo;t make sense.
+            You&rsquo;re getting the distilled result for $9.99 â€” and there&rsquo;s no version of that trade that doesn&rsquo;t make sense.
           </p>
 
           {/* â”€â”€ CTA Buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
@@ -288,7 +288,7 @@ export function CtaSection() {
                 rel="noopener noreferrer"
                 className="ct-btn-gold"
               >
-                Get the E-book â€” $9
+                Get the E-book â€” $9.99
               </a>
             </div>
 
@@ -351,4 +351,5 @@ export function CtaSection() {
     </>
   );
 }
+
 

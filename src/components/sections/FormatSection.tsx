@@ -14,7 +14,7 @@ const formats = [
     label:    "Hardcopy",
     image:    "/book.png",
     imageAlt: "7-Figure Agency Mindset A-Z â€” Hardcopy edition",
-    price:    "$9",
+    price:    "$9.99",
     benefits: [
       "Physical copy â€” read anywhere, no screen required",
       "Annotate, highlight, and revisit chapters easily",
@@ -30,7 +30,7 @@ const formats = [
     label:    "E-book",
     image:    "/book.png",
     imageAlt: "7-Figure Agency Mindset A-Z â€” E-book edition",
-    price:    "$9",
+    price:    "$9.99",
     benefits: [
       "Instant access â€” start reading in under 60 seconds",
       "Read on any device: phone, tablet, laptop",
@@ -324,4 +324,5 @@ function CardInner({
     </div>
   );
 }
+
 
