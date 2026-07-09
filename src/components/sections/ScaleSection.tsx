@@ -6,12 +6,12 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-// â”€â”€â”€ constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── constants ────────────────────────────────────────────────────────────────
 const GOLD  = "#C9A84C";
 const NAVY  = "#000D30";
 const CARD  = "#001A4D";
 
-// â”€â”€â”€ card data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── card data ────────────────────────────────────────────────────────────────
 const cards: { icon: LucideIcon; title: string; body: string }[] = [
   {
     icon:  Users2,
@@ -45,16 +45,16 @@ const cards: { icon: LucideIcon; title: string; body: string }[] = [
   },
 ];
 
-// â”€â”€â”€ component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── component ────────────────────────────────────────────────────────────────
 export function ScaleSection() {
   const { ref: headRef,  inView: headIn  } = useInView({ triggerOnce: true, threshold: 0.25 });
   const { ref: cardsRef, inView: cardsIn } = useInView({ triggerOnce: true, threshold: 0.1  });
 
   return (
     <>
-      {/* â”€â”€ scoped styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── scoped styles ──────────────────────────────────────────────── */}
       <style>{`
-        /* â”€â”€ background particle drift â”€â”€ */
+        /* ── background particle drift ── */
         @keyframes sc-dots-drift {
           0%   { background-position: 0 0; }
           100% { background-position: 36px 36px; }
@@ -72,7 +72,7 @@ export function ScaleSection() {
           animation: sc-dots-drift 14s linear infinite;
         }
 
-        /* â”€â”€ header stagger â”€â”€ */
+        /* ── header stagger ── */
         @keyframes sc-fade-up {
           from { opacity: 0; transform: translateY(22px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -121,7 +121,7 @@ export function ScaleSection() {
             0 0 0 1px rgba(201,168,76,0.18);
         }
 
-        /* â”€â”€ icon circle glow on hover â”€â”€ */
+        /* ── icon circle glow on hover ── */
         .sc-icon-wrap {
           transition: background-color 0.22s ease;
         }
@@ -129,7 +129,7 @@ export function ScaleSection() {
           background-color: rgba(201,168,76,0.22);
         }
 
-        /* â”€â”€ CTA â”€â”€ */
+        /* ── CTA ── */
         .sc-cta { opacity: 0; }
         .sc-cta.sc-in {
           animation: sc-fade-up 0.55s ease-out 0.75s both;
@@ -146,7 +146,7 @@ export function ScaleSection() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          {/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Header ──────────────────────────────────────────────── */}
           <div ref={headRef} className="mx-auto mb-14 max-w-2xl text-center">
 
             {/* Badge pill */}
@@ -155,7 +155,7 @@ export function ScaleSection() {
                 className="inline-block rounded-full px-4 py-1.5 text-[11px] font-black tracking-[0.18em] uppercase"
                 style={{ backgroundColor: GOLD, color: NAVY }}
               >
-                ðŸ“ˆ&nbsp; Phase Three: Scale
+                📈&nbsp; Phase Three: Scale
               </span>
             </div>
 
@@ -172,11 +172,11 @@ export function ScaleSection() {
               className={`sc-head-item sc-hd3 ${headIn ? "sc-in" : ""} text-[17px] leading-relaxed`}
               style={{ color: "rgba(255,255,255,0.55)" }}
             >
-              At Â£10K/month, hustle built the business. Past Â£50K, only systems grow it. This section is the operator's manual for crossing that line — with your margins, your team, and your sanity intact.
+              At £10K/month, hustle built the business. Past £50K, only systems grow it. This section is the operator's manual for crossing that line — with your margins, your team, and your sanity intact.
             </p>
           </div>
 
-          {/* â”€â”€ 2 Ã— 3 card grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── 2 × 3 card grid ─────────────────────────────────────── */}
           <div
             ref={cardsRef}
             className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
@@ -220,7 +220,7 @@ export function ScaleSection() {
             ))}
           </div>
 
-          {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── CTA ─────────────────────────────────────────────────── */}
           <div
             className={`sc-cta ${cardsIn ? "sc-in" : ""} mt-14 flex justify-center`}
           >
@@ -244,5 +244,3 @@ export function ScaleSection() {
     </>
   );
 }
-
-

@@ -3,11 +3,11 @@
 import { useInView } from "react-intersection-observer";
 import { CheckCircle2 } from "lucide-react";
 
-// â”€â”€â”€ constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── constants ────────────────────────────────────────────────────────────────
 const GOLD = "#C9A84C";
 const NAVY = "#000025";
 
-// â”€â”€â”€ data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── data ─────────────────────────────────────────────────────────────────────
 const formats = [
   {
     id:       "hardcopy",
@@ -43,16 +43,16 @@ const formats = [
   },
 ];
 
-// â”€â”€â”€ component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── component ────────────────────────────────────────────────────────────────
 export function FormatSection() {
   const { ref: headRef,  inView: headIn  } = useInView({ triggerOnce: true, threshold: 0.25 });
   const { ref: cardsRef, inView: cardsIn } = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
     <>
-      {/* â”€â”€ scoped styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── scoped styles ──────────────────────────────────────────────── */}
       <style>{`
-        /* â”€â”€ header â”€â”€ */
+        /* ── header ── */
         @keyframes fs-fade-up {
           from { opacity: 0; transform: translateY(22px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -65,7 +65,7 @@ export function FormatSection() {
         .fs-hd2.fs-in { animation-delay: 0.18s; }
         .fs-hd3.fs-in { animation-delay: 0.30s; }
 
-        /* â”€â”€ card slide-in from opposite sides â”€â”€ */
+        /* ── card slide-in from opposite sides ── */
         @keyframes fs-slide-left {
           from { opacity: 0; transform: translateX(-44px); }
           to   { opacity: 1; transform: translateX(0); }
@@ -85,7 +85,7 @@ export function FormatSection() {
           animation: fs-slide-right 0.7s ease-out 0.15s both;
         }
 
-        /* â”€â”€ e-book gradient border shimmer (3s loop) â”€â”€ */
+        /* ── e-book gradient border shimmer (3s loop) ── */
         @keyframes fs-border-shimmer {
           0%   { background-position:   0% 50%; }
           50%  { background-position: 100% 50%; }
@@ -106,7 +106,7 @@ export function FormatSection() {
           animation:        fs-border-shimmer 3s ease-in-out infinite;
         }
 
-        /* â”€â”€ shared card styles â”€â”€ */
+        /* ── shared card styles ── */
         .fs-card {
           border-radius:    18px;
           background:       #ffffff;
@@ -127,7 +127,7 @@ export function FormatSection() {
           border:           1.5px solid rgba(0,0,37,0.08);
         }
 
-        /* â”€â”€ CTA button transitions â”€â”€ */
+        /* ── CTA button transitions ── */
         .fs-btn {
           transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -137,14 +137,14 @@ export function FormatSection() {
           box-shadow: 0 8px 20px rgba(0,0,0,0.18);
         }
 
-        /* â”€â”€ benefit checkmark colour â”€â”€ */
+        /* ── benefit checkmark colour ── */
         .fs-check { color: ${GOLD}; }
       `}</style>
 
       <section className="bg-white py-24 sm:py-28" aria-label="Choose your format">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 
-          {/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Header ──────────────────────────────────────────────── */}
           <div ref={headRef} className="mx-auto mb-14 max-w-2xl text-center">
             <p
               className={`fs-head-item fs-hd1 ${headIn ? "fs-in" : ""} mb-4 text-[11px] font-black tracking-[0.22em] uppercase`}
@@ -168,7 +168,7 @@ export function FormatSection() {
             </p>
           </div>
 
-          {/* â”€â”€ Two format cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Two format cards ────────────────────────────────────── */}
           {/* pt-8 on both columns reserves space for the e-book badge */}
           <div ref={cardsRef} className="grid gap-8 pt-8 sm:grid-cols-2">
 
@@ -228,7 +228,7 @@ export function FormatSection() {
             })}
           </div>
 
-          {/* â”€â”€ Disclaimer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Disclaimer ──────────────────────────────────────────── */}
           <p
             className="mt-8 text-center text-[13px] leading-relaxed"
             style={{ color: "#9898A8" }}
@@ -243,7 +243,7 @@ export function FormatSection() {
   );
 }
 
-// â”€â”€â”€ card inner (extracted to avoid duplicating JSX) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── card inner (extracted to avoid duplicating JSX) ─────────────────────────
 function CardInner({
   image, imageAlt, label, price, benefits, ctaLabel, ctaHref, featured, cardClass,
 }: {
@@ -324,5 +324,3 @@ function CardInner({
     </div>
   );
 }
-
-

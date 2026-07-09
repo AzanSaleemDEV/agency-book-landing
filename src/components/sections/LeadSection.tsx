@@ -3,11 +3,11 @@
 import { useInView } from "react-intersection-observer";
 import { Crosshair, Link2, Search, Megaphone, type LucideIcon } from "lucide-react";
 
-// â”€â”€â”€ constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── constants ────────────────────────────────────────────────────────────────
 const GOLD = "#C9A84C";
 const NAVY = "#000025";
 
-// â”€â”€â”€ card data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── card data ────────────────────────────────────────────────────────────────
 const channels: { icon: LucideIcon; title: string; body: string }[] = [
   {
     icon:  Crosshair,
@@ -31,7 +31,7 @@ const channels: { icon: LucideIcon; title: string; body: string }[] = [
   },
 ];
 
-// â”€â”€â”€ component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── component ────────────────────────────────────────────────────────────────
 export function LeadSection() {
   const { ref: headRef,  inView: headIn  } = useInView({ triggerOnce: true, threshold: 0.25 });
   const { ref: cardsRef, inView: cardsIn } = useInView({ triggerOnce: true, threshold: 0.1  });
@@ -39,9 +39,9 @@ export function LeadSection() {
 
   return (
     <>
-      {/* â”€â”€ scoped styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── scoped styles ──────────────────────────────────────────────── */}
       <style>{`
-        /* â”€â”€ header â”€â”€ */
+        /* ── header ── */
         @keyframes ld-fade-up {
           from { opacity: 0; transform: translateY(22px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -98,7 +98,7 @@ export function LeadSection() {
           background-color: rgba(201,168,76,0.22);
         }
 
-        /* â”€â”€ diagonal shape at bottom of white area â”€â”€ */
+        /* ── diagonal shape at bottom of white area ── */
         .ld-diagonal-bridge {
           display: block;
           width: 100%;
@@ -110,7 +110,7 @@ export function LeadSection() {
           width: 100%;
         }
 
-        /* â”€â”€ bottom navy strip slides up â”€â”€ */
+        /* ── bottom navy strip slides up ── */
         @keyframes ld-strip-up {
           from { opacity: 0; transform: translateY(36px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -127,7 +127,7 @@ export function LeadSection() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          {/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Header ──────────────────────────────────────────────── */}
           <div ref={headRef} className="mx-auto mb-14 max-w-2xl text-center">
             <p
               className={`ld-head-item ld-hd1 ${headIn ? "ld-in" : ""} mb-4 text-[11px] font-black tracking-[0.22em] uppercase`}
@@ -151,7 +151,7 @@ export function LeadSection() {
             </p>
           </div>
 
-          {/* â”€â”€ 2 Ã— 2 card grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── 2 × 2 card grid ─────────────────────────────────────── */}
           <div
             ref={cardsRef}
             className="grid gap-5 sm:grid-cols-2"
@@ -193,7 +193,7 @@ export function LeadSection() {
           </div>
         </div>
 
-        {/* â”€â”€ Diagonal bridge + full-width navy strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── Diagonal bridge + full-width navy strip ──────────────── */}
         {/* SVG diagonal separator — full viewport width */}
         <div className="ld-diagonal-bridge mt-16" aria-hidden="true">
           <svg
@@ -250,5 +250,3 @@ export function LeadSection() {
     </>
   );
 }
-
-

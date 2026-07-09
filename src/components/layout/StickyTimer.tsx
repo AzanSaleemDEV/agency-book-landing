@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-// â”€â”€â”€ constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── constants ────────────────────────────────────────────────────────────────
 const GOLD  = "#C9A84C";
 const NAVY  = "#000025";
 const TOTAL = 30 * 24 * 60 * 60; // 30 days in seconds — resets on zero
@@ -11,7 +11,7 @@ function pad(n: number) {
   return String(n).padStart(2, "0");
 }
 
-// â”€â”€â”€ component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── component ────────────────────────────────────────────────────────────────
 export function StickyTimer() {
   const [secs,    setSecs]    = useState(TOTAL);
   const [visible, setVisible] = useState(false);
@@ -61,7 +61,7 @@ export function StickyTimer() {
         }
         .st-bar.st-on { transform: translateY(0); }
 
-        /* â”€â”€ digit box â”€â”€ */
+        /* ── digit box ── */
         .st-box {
           display:         flex;
           flex-direction:  column;
@@ -107,7 +107,7 @@ export function StickyTimer() {
           align-self:   center;
         }
 
-        /* â”€â”€ CTA â”€â”€ */
+        /* ── CTA ── */
         .st-cta {
           display:         inline-block;
           background:      ${GOLD};
@@ -129,7 +129,7 @@ export function StickyTimer() {
           box-shadow: 0 8px 22px rgba(201,168,76,0.48);
         }
 
-        /* â”€â”€ blinking "Hurry Up!" â”€â”€ */
+        /* ── blinking "Hurry Up!" ── */
         @keyframes st-blink {
           0%, 100% { opacity: 1; }
           50%       { opacity: 0.4; }
@@ -137,7 +137,7 @@ export function StickyTimer() {
         .st-hurry { animation: st-blink 1.3s ease-in-out infinite; }
       `}</style>
 
-      {/* â”€â”€ Full-width sticky bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Full-width sticky bar ───────────────────────────────────── */}
       <div
         className={`st-bar ${visible ? "st-on" : ""}`}
         role="banner"
@@ -222,5 +222,3 @@ export function StickyTimer() {
     </>
   );
 }
-
-

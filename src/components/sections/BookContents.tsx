@@ -2,11 +2,11 @@
 
 import { useInView } from "react-intersection-observer";
 
-// â”€â”€â”€ constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── constants ────────────────────────────────────────────────────────────────
 const GOLD = "#C9A84C";
 const NAVY = "#000D30";
 
-// â”€â”€â”€ data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── data ─────────────────────────────────────────────────────────────────────
 const pillars: { label: string; chapters: { num: number; title: string }[] }[] = [
   {
     label: "AGENCY ALCHEMY: FOUNDATION",
@@ -58,16 +58,16 @@ const pillars: { label: string; chapters: { num: number; title: string }[] }[] =
   },
 ];
 
-// â”€â”€â”€ component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── component ────────────────────────────────────────────────────────────────
 export function BookContents() {
   const { ref: headRef,    inView: headIn    } = useInView({ triggerOnce: true, threshold: 0.25 });
   const { ref: pillarsRef, inView: pillarsIn } = useInView({ triggerOnce: true, threshold: 0.06 });
 
   return (
     <>
-      {/* â”€â”€ scoped styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── scoped styles ──────────────────────────────────────────────── */}
       <style>{`
-        /* â”€â”€ header â”€â”€ */
+        /* ── header ── */
         @keyframes bc-fade-up {
           from { opacity: 0; transform: translateY(22px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -80,7 +80,7 @@ export function BookContents() {
         .bc-hd2.bc-in { animation-delay: 0.18s; }
         .bc-hd3.bc-in { animation-delay: 0.30s; }
 
-        /* â”€â”€ pillar card fade-up â”€â”€ */
+        /* ── pillar card fade-up ── */
         .bc-pillar {
           opacity: 0;
           transform: translateY(24px);
@@ -89,7 +89,7 @@ export function BookContents() {
           animation: bc-fade-up 0.6s ease-out var(--pd, 0s) both;
         }
 
-        /* â”€â”€ chapter line slide-from-left â”€â”€ */
+        /* ── chapter line slide-from-left ── */
         @keyframes bc-ch-in {
           from { opacity: 0; transform: translateX(-18px); }
           to   { opacity: 1; transform: translateX(0); }
@@ -101,7 +101,7 @@ export function BookContents() {
           animation: bc-ch-in 0.38s ease-out var(--cd, 0s) both;
         }
 
-        /* â”€â”€ book float (replicates bh-float from BookHero) â”€â”€ */
+        /* ── book float (replicates bh-float from BookHero) ── */
         @keyframes bc-float {
           0%, 100% { transform: translateY(0px) rotate(-1deg); }
           50%       { transform: translateY(-12px) rotate(-1deg); }
@@ -111,13 +111,13 @@ export function BookContents() {
           display: inline-block;
         }
 
-        /* â”€â”€ right panel fade â”€â”€ */
+        /* ── right panel fade ── */
         .bc-book-panel { opacity: 0; }
         .bc-book-panel.bc-in {
           animation: bc-fade-up 0.65s ease-out 0.4s both;
         }
 
-        /* â”€â”€ pillar card hover â”€â”€ */
+        /* ── pillar card hover ── */
         .bc-pillar-card {
           border: 1px solid rgba(201,168,76,0.1);
           border-radius: 16px;
@@ -130,7 +130,7 @@ export function BookContents() {
           background: rgba(255,255,255,0.055);
         }
 
-        /* â”€â”€ gold separator line inside pillar â”€â”€ */
+        /* ── gold separator line inside pillar ── */
         .bc-pillar-rule {
           height: 1px;
           margin: 0.75rem 0 1rem;
@@ -146,7 +146,7 @@ export function BookContents() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          {/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Header ──────────────────────────────────────────────── */}
           <div ref={headRef} className="mx-auto mb-14 max-w-2xl text-center">
             <p
               className={`bc-head-item bc-hd1 ${headIn ? "bc-in" : ""} mb-4 text-[11px] font-black tracking-[0.22em] uppercase`}
@@ -171,13 +171,13 @@ export function BookContents() {
             </p>
           </div>
 
-          {/* â”€â”€ Main: pillars grid + sticky book â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Main: pillars grid + sticky book ────────────────────── */}
           <div
             ref={pillarsRef}
             className="lg:grid lg:grid-cols-[1fr_260px] lg:items-start lg:gap-14"
           >
 
-            {/* LEFT: 2 Ã— 2 pillars grid */}
+            {/* LEFT: 2 × 2 pillars grid */}
             <div className="grid gap-6 md:grid-cols-2">
               {pillars.map(({ label, chapters }, pi) => (
                 <div
@@ -289,5 +289,3 @@ export function BookContents() {
     </>
   );
 }
-
-

@@ -11,7 +11,7 @@ const bullets = [
 export function BookHero() {
   return (
     <>
-      {/* â”€â”€ scoped styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── scoped styles ───────────────────────────────────────────────── */}
       <style>{`
         /* Dot-matrix background drift */
         @keyframes bh-grid-drift {
@@ -85,7 +85,7 @@ export function BookHero() {
         }
       `}</style>
 
-      {/* â”€â”€ section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── section ─────────────────────────────────────────────────────── */}
       <section
         style={{ backgroundColor: NAVY }}
         className="relative overflow-hidden py-[120px]"
@@ -107,7 +107,7 @@ export function BookHero() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
 
-            {/* â”€â”€ LEFT COLUMN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+            {/* ── LEFT COLUMN ───────────────────────────────────────────── */}
             <div className="flex flex-col gap-7">
 
               {/* Badge */}
@@ -185,13 +185,13 @@ export function BookHero() {
                 className="bh-item bh-d6 text-[13px] leading-relaxed"
                 style={{ color: "rgba(255,255,255,0.45)" }}
               >
-                ðŸ”’ Secure Checkout&nbsp;&nbsp;·&nbsp;&nbsp;
-                ðŸ“¦ Ships Worldwide&nbsp;&nbsp;·&nbsp;&nbsp;
+                🔒 Secure Checkout&nbsp;&nbsp;·&nbsp;&nbsp;
+                📦 Ships Worldwide&nbsp;&nbsp;·&nbsp;&nbsp;
                 ⚡ Instant E-book Access
               </p>
             </div>
 
-            {/* â”€â”€ RIGHT COLUMN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+            {/* ── RIGHT COLUMN ──────────────────────────────────────────── */}
             <div className="bh-book-col flex justify-center lg:justify-end">
               <div className="relative inline-block">
 
@@ -242,5 +242,3 @@ export function BookHero() {
     </>
   );
 }
-
-

@@ -3,11 +3,11 @@
 import { useInView } from "react-intersection-observer";
 import { Rocket, Handshake, TrendingUp, type LucideIcon } from "lucide-react";
 
-// â”€â”€â”€ constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── constants ────────────────────────────────────────────────────────────────
 const GOLD = "#C9A84C";
 const NAVY = "#000025";
 
-// â”€â”€â”€ data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── data ─────────────────────────────────────────────────────────────────────
 const steps: {
   num: string;
   icon: LucideIcon;
@@ -38,16 +38,16 @@ const steps: {
   },
 ];
 
-// â”€â”€â”€ component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── component ────────────────────────────────────────────────────────────────
 export function FrameworkSection() {
   const { ref: headRef,  inView: headIn  } = useInView({ triggerOnce: true, threshold: 0.25 });
   const { ref: stepsRef, inView: stepsIn } = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
     <>
-      {/* â”€â”€ scoped styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── scoped styles ──────────────────────────────────────────────── */}
       <style>{`
-        /* â”€â”€ header â”€â”€ */
+        /* ── header ── */
         @keyframes fw-fade-up {
           from { opacity: 0; transform: translateY(22px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -60,7 +60,7 @@ export function FrameworkSection() {
         .fw-hd2.fw-in { animation-delay: 0.20s; }
         .fw-hd3.fw-in { animation-delay: 0.35s; }
 
-        /* â”€â”€ dashed connecting line — draws L→R on scroll â”€â”€ */
+        /* ── dashed connecting line — draws L→R on scroll ── */
         .fw-line-track {
           position: absolute;
           /* sits at the vertical center of the step-number text (approx 56px from top of card) */
@@ -87,7 +87,7 @@ export function FrameworkSection() {
           width: 100%;
         }
 
-        /* â”€â”€ step cards — stagger up â”€â”€ */
+        /* ── step cards — stagger up ── */
         .fw-card {
           opacity: 0;
           transform: translateY(30px);
@@ -123,7 +123,7 @@ export function FrameworkSection() {
           transform: translateY(-6px);
         }
 
-        /* â”€â”€ CTA â”€â”€ */
+        /* ── CTA ── */
         .fw-cta { opacity: 0; }
         .fw-cta.fw-in {
           animation: fw-fade-up 0.55s ease-out 0.7s both;
@@ -136,7 +136,7 @@ export function FrameworkSection() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          {/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Header ──────────────────────────────────────────────── */}
           <div ref={headRef} className="mx-auto max-w-2xl text-center">
 
             <p
@@ -161,7 +161,7 @@ export function FrameworkSection() {
             </p>
           </div>
 
-          {/* â”€â”€ Steps grid + connecting line â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Steps grid + connecting line ────────────────────────── */}
           <div ref={stepsRef} className="relative mt-16">
 
             {/* Dashed line — desktop only */}
@@ -225,7 +225,7 @@ export function FrameworkSection() {
             </div>
           </div>
 
-          {/* â”€â”€ Bottom CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+          {/* ── Bottom CTA ───────────────────────────────────────────── */}
           <div
             className={`fw-cta ${stepsIn ? "fw-in" : ""} mt-14 flex justify-center`}
           >
@@ -245,5 +245,3 @@ export function FrameworkSection() {
     </>
   );
 }
-
-
