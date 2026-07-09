@@ -1,4 +1,5 @@
 import { StickyTimer }  from "@/components/layout/StickyTimer";
+import { StickyNav }    from "@/components/layout/StickyNav";
 import { BookHero }     from "@/components/sections/BookHero";
 import { PainSection }   from "@/components/sections/PainSection";
 import { AuthorSection }    from "@/components/sections/AuthorSection";
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <StickyTimer />
+      <StickyNav />
       <main>
         <BookHero />
         <PainSection />
