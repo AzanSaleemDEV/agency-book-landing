@@ -27,13 +27,13 @@ export function UrgencySection() {
   return (
     <>
       <style>{`
-        /* Section gradient — deep crimson → navy */
+        /* Section gradient — deep navy with gold undertone */
         .ug-section {
           background: linear-gradient(
             160deg,
-            #1a0008 0%,
-            #200010 25%,
-            #12000C 55%,
+            #000D38 0%,
+            #00082A 28%,
+            #000520 55%,
             ${NAVY} 100%
           );
           position: relative;
@@ -49,7 +49,7 @@ export function UrgencySection() {
           z-index: 0;
         }
 
-        /* Radial glow from top-center */
+        /* Radial glow from top-center — gold */
         .ug-glow {
           position: absolute;
           top: -80px;
@@ -57,7 +57,7 @@ export function UrgencySection() {
           transform: translateX(-50%);
           width: 700px;
           height: 500px;
-          background: radial-gradient(ellipse at 50% 20%, rgba(220,30,60,0.22) 0%, transparent 65%);
+          background: radial-gradient(ellipse at 50% 20%, rgba(201,168,76,0.14) 0%, transparent 65%);
           pointer-events: none;
           z-index: 0;
         }
@@ -81,15 +81,15 @@ export function UrgencySection() {
           display: inline-flex;
           align-items: center;
           gap: 7px;
-          background: rgba(220,30,60,0.15);
-          border: 1px solid rgba(220,30,60,0.4);
+          background: rgba(201,168,76,0.1);
+          border: 1px solid rgba(201,168,76,0.35);
           border-radius: 100px;
           padding: 8px 20px;
           font-size: 11px;
           font-weight: 900;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: #FF6B6B;
+          color: ${GOLD};
         }
 
         /* Price display */
@@ -138,8 +138,8 @@ export function UrgencySection() {
           align-items: center;
           min-width: clamp(56px, 10vw, 76px);
           padding: 12px 10px 8px;
-          background: rgba(0,0,0,0.35);
-          border: 1px solid rgba(220,30,60,0.3);
+          background: rgba(0,0,0,0.3);
+          border: 1px solid rgba(201,168,76,0.25);
           border-radius: 10px;
           backdrop-filter: blur(4px);
         }
@@ -161,7 +161,7 @@ export function UrgencySection() {
         .ug-tsep {
           font-size: clamp(1.25rem, 3vw, 1.75rem);
           font-weight: 900;
-          color: rgba(220,30,60,0.7);
+          color: rgba(201,168,76,0.5);
           padding-bottom: 14px;
           align-self: center;
         }
@@ -234,14 +234,14 @@ export function UrgencySection() {
         /* Urgency text blink */
         @keyframes ug-blink {
           0%, 80%, 100% { opacity: 1; }
-          40%            { opacity: 0.4; }
+          40%            { opacity: 0.3; }
         }
         .ug-dot-blink {
           display: inline-block;
           width: 7px;
           height: 7px;
           border-radius: 50%;
-          background: #FF6B6B;
+          background: ${GOLD};
           animation: ug-blink 1.8s ease-in-out infinite;
           vertical-align: middle;
           margin-right: 6px;
@@ -293,7 +293,7 @@ export function UrgencySection() {
 
           {/* Countdown */}
           <div className={`ug-item ug-d4 ${inView ? "ug-in" : ""} mb-10`}>
-            <p className="mb-5 text-[13px] font-black uppercase tracking-[0.16em]" style={{ color: "#FF6B6B" }}>
+            <p className="mb-5 text-[13px] font-black uppercase tracking-[0.16em]" style={{ color: GOLD }}>
               <span className="ug-dot-blink" aria-hidden="true" />
               Offer expires in
             </p>
