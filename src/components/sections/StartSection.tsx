@@ -112,7 +112,7 @@ export function StartSection() {
 
       <section
         style={{ backgroundColor: BG }}
-        className="py-24 sm:py-28"
+        className="f-section overflow-hidden"
         aria-label="Phase One — Start"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -134,7 +134,7 @@ export function StartSection() {
 
             {/* Headline */}
             <h2
-              className="mb-4 text-[36px] font-bold leading-[1.1] tracking-tight sm:text-5xl"
+              className="mb-4 f-h2 font-bold tracking-tight"
               style={{ color: "#FFFFFF", fontFamily: "var(--font-playfair)" }}
             >
               Most Agencies Fail in the First 90 Days. Here's Exactly Why.

@@ -154,7 +154,7 @@ export function CtaSection() {
         id="final-cta"
         ref={ref}
         style={{ backgroundColor: NAVY }}
-        className="relative overflow-hidden py-20 sm:py-[140px]"
+        className="relative overflow-hidden f-section-lg"
         aria-label="Get the book"
       >
         {/* ── Gold radial glow — static warm presence behind headline ── */}
@@ -259,7 +259,7 @@ export function CtaSection() {
 
           {/* ── Headline ─────────────────────────────────────────────── */}
           <h2
-            className={`ct-headline ${inView ? "ct-in" : ""} mx-auto mb-7 max-w-3xl text-center text-[32px] font-bold leading-[1.05] tracking-tight text-white sm:text-[52px] lg:text-[72px]`}
+            className={`ct-headline ${inView ? "ct-in" : ""} mx-auto mb-7 max-w-3xl text-center f-h2-xl font-bold tracking-tight text-white`}
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Stop Building Your Agency on Instinct.{" "}

@@ -152,7 +152,7 @@ export function AuthorSection() {
 
       <section
         style={{ backgroundColor: NAVY }}
-        className="py-24 sm:py-28"
+        className="f-section overflow-hidden"
         aria-label="About the author"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -206,7 +206,7 @@ export function AuthorSection() {
 
               {/* Name */}
               <h2
-                className="text-[30px] font-bold leading-[1.05] tracking-tight text-white sm:text-[42px]"
+                className="f-h2 font-bold tracking-tight text-white"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 Hamid Mahmood

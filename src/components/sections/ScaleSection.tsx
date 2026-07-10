@@ -138,7 +138,7 @@ export function ScaleSection() {
 
       <section
         style={{ backgroundColor: NAVY }}
-        className="relative overflow-hidden py-24 sm:py-28"
+        className="relative overflow-hidden f-section"
         aria-label="Phase Three — Scale"
       >
         {/* Animated dot particle background */}
@@ -161,7 +161,7 @@ export function ScaleSection() {
 
             {/* Headline */}
             <h2
-              className={`sc-head-item sc-hd2 ${headIn ? "sc-in" : ""} mb-5 text-[36px] font-bold leading-[1.08] tracking-tight sm:text-5xl`}
+              className={`sc-head-item sc-hd2 ${headIn ? "sc-in" : ""} mb-5 f-h2 font-bold tracking-tight`}
               style={{ color: "#FFFFFF", fontFamily: "var(--font-playfair)" }}
             >
               What Got You Here Will Stall You Here.

@@ -178,7 +178,7 @@ export function PainSection() {
 
             {/* Headline */}
             <h2
-              className={`ps-head-item ps-head-d2 text-[36px] font-bold leading-[1.1] tracking-tight sm:text-5xl mb-5 ${headInView ? "ps-visible" : ""}`}
+              className={`ps-head-item ps-head-d2 f-h2 font-bold tracking-tight mb-5 ${headInView ? "ps-visible" : ""}`}
               style={{ color: NAVY, fontFamily: "var(--font-playfair)" }}
             >
               Every Agency Stalls for the Same Three Reasons.

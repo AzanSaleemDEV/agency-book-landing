@@ -145,7 +145,7 @@ export function UrgencySection() {
       <section
         ref={ref}
         style={{ backgroundColor: NAVY }}
-        className="py-20 sm:py-28"
+        className="f-section"
         aria-label="Limited time offer"
       >
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
@@ -165,13 +165,13 @@ export function UrgencySection() {
 
             {/* Headline */}
             <h2
-              className="mb-2 text-center text-[28px] font-black leading-tight tracking-tight text-white sm:text-[36px]"
+              className="mb-2 text-center f-h2 font-black tracking-tight text-white"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Build &amp; Scale Your 7-Figure Agency
             </h2>
             <p
-              className="mb-8 text-center text-[16px] font-semibold sm:text-[18px]"
+              className="mb-8 text-center f-sub font-semibold"
               style={{ color: "rgba(255,255,255,0.7)" }}
             >
               Using Proven Strategies &amp; Systems That Work

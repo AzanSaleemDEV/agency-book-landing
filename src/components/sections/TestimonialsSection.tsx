@@ -310,7 +310,7 @@ export function TestimonialsSection() {
 
       <section
         style={{ backgroundColor: BG }}
-        className="overflow-hidden py-24 sm:py-28"
+        className="overflow-hidden f-section"
         aria-label="Reader reviews"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -321,7 +321,7 @@ export function TestimonialsSection() {
               style={{ color: GOLD }}>
               What Readers Are Saying
             </p>
-            <h2 className={`ts-hd ts-hd2 ${headIn ? "ts-in" : ""} mb-5 text-[34px] font-bold leading-tight tracking-tight text-white sm:text-5xl`}
+            <h2 className={`ts-hd ts-hd2 ${headIn ? "ts-in" : ""} mb-5 f-h2 font-bold tracking-tight text-white`}
               style={{ fontFamily: "var(--font-playfair)" }}>
               Real Reviews. Real Results.
             </h2>

@@ -137,7 +137,7 @@ export function LeadSection() {
             </p>
 
             <h2
-              className={`ld-head-item ld-hd2 ${headIn ? "ld-in" : ""} mb-5 text-[36px] font-bold leading-[1.08] tracking-tight sm:text-5xl`}
+              className={`ld-head-item ld-hd2 ${headIn ? "ld-in" : ""} mb-5 f-h2 font-bold tracking-tight`}
               style={{ color: NAVY, fontFamily: "var(--font-playfair)" }}
             >
               Most Agencies Wait for Referrals. The Ones That Scale Don't Wait for Anything.

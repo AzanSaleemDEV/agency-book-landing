@@ -88,7 +88,7 @@ export function BookHero() {
       {/* ── section ─────────────────────────────────────────────────────── */}
       <section
         style={{ backgroundColor: NAVY }}
-        className="relative overflow-hidden py-16 sm:py-24 lg:py-[120px]"
+        className="relative overflow-hidden f-section-lg"
         aria-label="Hero"
       >
         {/* Animated dot-matrix background */}
@@ -122,7 +122,7 @@ export function BookHero() {
 
               {/* H1 */}
               <h1
-                className="bh-item bh-d2 text-[38px] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[72px]"
+                className="bh-item bh-d2 f-hero font-bold tracking-tight text-white"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 You Don't Have an Agency Problem. You Have a Systems Problem.
@@ -130,7 +130,7 @@ export function BookHero() {
 
               {/* Subheadline */}
               <p
-                className="bh-item bh-d3 text-[17px] sm:text-[20px] leading-relaxed"
+                className="bh-item bh-d3 f-sub"
                 style={{ color: "#A8A8C0" }}
               >
                 The A-to-Z playbook for digital marketing agency owners who are

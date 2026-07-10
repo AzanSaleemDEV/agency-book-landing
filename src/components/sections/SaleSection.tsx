@@ -157,7 +157,7 @@ export function SaleSection() {
         }
       `}</style>
 
-      <section className="bg-white py-24 sm:py-28" aria-label="Phase Two — Sale">
+      <section className="bg-white f-section overflow-hidden" aria-label="Phase Two — Sale">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* ── Header ──────────────────────────────────────────────── */}
@@ -176,7 +176,7 @@ export function SaleSection() {
             </div>
 
             <h2
-              className="mb-5 text-[36px] font-bold leading-[1.08] tracking-tight sm:text-5xl"
+              className="mb-5 f-h2 font-bold tracking-tight"
               style={{ color: NAVY, fontFamily: "var(--font-playfair)" }}
             >
               The Difference Between a £3K Client and a £30K Client Is Rarely the Work.
