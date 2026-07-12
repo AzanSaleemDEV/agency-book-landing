@@ -6,7 +6,6 @@ import { ChevronDown } from "lucide-react";
 
 const GOLD = "#C9A84C";
 const NAVY = "#000025";
-const BG   = "#00031A";
 
 const FAQS = [
   {
@@ -53,14 +52,14 @@ export function FaqSection() {
 
         /* FAQ item */
         .fq-item {
-          border-bottom: 1px solid rgba(201,168,76,0.12);
+          border-bottom: 1px solid rgba(0,0,37,0.09);
           opacity: 0;
         }
         .fq-item.fq-in {
           animation: fq-fade-up 0.5s ease-out both;
         }
         .fq-item:first-of-type {
-          border-top: 1px solid rgba(201,168,76,0.12);
+          border-top: 1px solid rgba(0,0,37,0.09);
         }
 
         /* Question button */
@@ -77,7 +76,7 @@ export function FaqSection() {
           cursor: pointer;
           font-size: clamp(0.95rem, 1vw + 0.5rem, 1.0625rem);
           font-weight: 700;
-          color: #ffffff;
+          color: ${NAVY};
           line-height: 1.4;
           transition: color 0.2s;
         }
@@ -107,27 +106,28 @@ export function FaqSection() {
           padding-bottom: 20px;
           font-size: clamp(0.9rem, 0.6vw + 0.7rem, 1rem);
           line-height: 1.75;
-          color: rgba(255,255,255,0.62);
+          color: rgba(0,0,37,0.58);
         }
       `}</style>
 
       <section
         ref={ref}
-        style={{ backgroundColor: BG }}
-        className="f-section overflow-hidden"
+        className="f-section overflow-hidden bg-white"
         aria-label="Frequently asked questions"
       >
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
           <div className="mb-12 text-center">
-            <p className={`fq-hd fq-hd1 ${inView ? "fq-in" : ""} mb-4 text-[11px] font-black tracking-[0.22em] uppercase`}
-              style={{ color: GOLD }}>
+            <p
+              className={`fq-hd fq-hd1 ${inView ? "fq-in" : ""} mb-4 text-[11px] font-black tracking-[0.22em] uppercase`}
+              style={{ color: GOLD }}
+            >
               Got Questions?
             </p>
             <h2
-              className={`fq-hd fq-hd2 ${inView ? "fq-in" : ""} f-h2 font-bold tracking-tight text-white`}
-              style={{ fontFamily: "var(--font-playfair)" }}
+              className={`fq-hd fq-hd2 ${inView ? "fq-in" : ""} f-h2 font-bold tracking-tight`}
+              style={{ color: NAVY, fontFamily: "var(--font-playfair)" }}
             >
               Frequently Asked Questions
             </h2>
@@ -167,7 +167,7 @@ export function FaqSection() {
 
           {/* Bottom CTA */}
           <div className="mt-14 text-center">
-            <p className="mb-6 text-[16px]" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <p className="mb-6 text-[16px]" style={{ color: "rgba(0,0,37,0.48)" }}>
               Still on the fence? Your entire investment is just{" "}
               <span style={{ color: GOLD, fontWeight: 700 }}>$9.99</span>.
               That&rsquo;s less than a coffee. The risk is zero.
