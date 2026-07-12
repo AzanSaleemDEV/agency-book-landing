@@ -15,10 +15,10 @@ const BODY = [
 ];
 
 const STATS = [
-  { prefix: "",  value: 10,  suffix: "+",  label: "Years of Agency Experience" },
-  { prefix: "$", value: 1,   suffix: "M+", label: "Revenue Built"              },
-  { prefix: "",  value: 500, suffix: "+",  label: "Clients Served"             },
-  { prefix: "",  value: 12,  suffix: "+",  label: "Countries Reached"          },
+  { prefix: "",  value: 8000, suffix: "+",  label: "Projects Delivered"        },
+  { prefix: "",  value: 3000, suffix: "+",  label: "Clients Served"            },
+  { prefix: "",  value: 200,  suffix: "+",  label: "Team Members"              },
+  { prefix: "",  value: 5,    suffix: ".0", label: "Clutch Rating"             },
 ];
 
 // ─── stat item ────────────────────────────────────────────────────────────────
@@ -42,7 +42,8 @@ function StatItem({
               end={value}
               prefix={prefix}
               suffix={suffix}
-              duration={2.2}
+              duration={value >= 1000 ? 2.8 : 2.2}
+              decimals={value === 5 ? 1 : 0}
               useEasing
               onEnd={() => setDone(true)}
             />
