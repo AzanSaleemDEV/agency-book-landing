@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 // ─── constants ────────────────────────────────────────────────────────────────
 const GOLD  = "#C9A84C";
 const NAVY  = "#000025";
-const TOTAL = 30 * 24 * 60 * 60; // 30 days in seconds — resets on zero
+const TOTAL = 15 * 60 * 60; // 15 hours in seconds
 
 function pad(n: number) {
   return String(n).padStart(2, "0");
@@ -179,19 +179,12 @@ export function StickyTimer() {
             aria-live="polite"
             aria-label={`${days} days ${hours} hours ${mins} minutes ${sec} seconds remaining`}
           >
-            {/* DAYS + HOURS — desktop only */}
-            <div className="hidden sm:flex items-center gap-1">
-              <div className={`st-box ${isUrgent ? "st-urgent" : ""} ${pulse ? "st-pulse" : ""}`}>
-                <span className={`st-num ${isUrgent ? "st-urgent" : ""}`}>{pad(days)}</span>
-                <span className={`st-lbl ${isUrgent ? "st-urgent" : ""}`}>Days</span>
-              </div>
-              <span className="st-sep" aria-hidden="true">:</span>
-              <div className={`st-box ${isUrgent ? "st-urgent" : ""} ${pulse ? "st-pulse" : ""}`}>
-                <span className={`st-num ${isUrgent ? "st-urgent" : ""}`}>{pad(hours)}</span>
-                <span className={`st-lbl ${isUrgent ? "st-urgent" : ""}`}>Hours</span>
-              </div>
-              <span className="st-sep" aria-hidden="true">:</span>
+            {/* HOURS — always visible */}
+            <div className={`st-box ${isUrgent ? "st-urgent" : ""} ${pulse ? "st-pulse" : ""}`}>
+              <span className={`st-num ${isUrgent ? "st-urgent" : ""}`}>{pad(hours)}</span>
+              <span className={`st-lbl ${isUrgent ? "st-urgent" : ""}`}>Hrs</span>
             </div>
+            <span className="st-sep" aria-hidden="true">:</span>
 
             {/* MINS */}
             <div className={`st-box ${isUrgent ? "st-urgent" : ""} ${pulse ? "st-pulse" : ""}`}>

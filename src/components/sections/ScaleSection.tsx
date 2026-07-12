@@ -172,7 +172,7 @@ export function ScaleSection() {
               className={`sc-head-item sc-hd3 ${headIn ? "sc-in" : ""} text-[17px] leading-relaxed`}
               style={{ color: "rgba(255,255,255,0.55)" }}
             >
-              At £10K/month, hustle built the business. Past £50K, only systems grow it. This section is the operator's manual for crossing that line — with your margins, your team, and your sanity intact.
+              At $10K/month, hustle built the business. Past $50K, only systems grow it. This section is the operator's manual for crossing that line, with your margins, your team, and your sanity intact.
             </p>
           </div>
 

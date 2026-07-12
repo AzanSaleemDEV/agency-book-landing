@@ -7,7 +7,7 @@ import { Flame, Zap } from "lucide-react";
 const GOLD = "#C9A84C";
 const NAVY = "#000025";
 
-const TOTAL = 30 * 24 * 60 * 60;
+const TOTAL = 15 * 60 * 60; // 15 hours
 function pad(n: number) { return String(n).padStart(2, "0"); }
 
 export function UrgencySection() {
@@ -298,11 +298,6 @@ export function UrgencySection() {
               Offer expires in
             </p>
             <div className="ug-timer-wrap">
-              <div className="ug-tbox">
-                <span className="ug-tnum">{pad(days)}</span>
-                <span className="ug-tlbl">Days</span>
-              </div>
-              <span className="ug-tsep">:</span>
               <div className="ug-tbox">
                 <span className="ug-tnum">{pad(hours)}</span>
                 <span className="ug-tlbl">Hours</span>

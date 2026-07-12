@@ -63,7 +63,7 @@ const SMALL = [
     date:   "Jan 17, 2025",
     source: "trustpilot" as const,
     title:  "Best place to learn",
-    text:   "I have learnt a lot from 7-Figure Agency Mindset A-Z by Hamid, gave me right directions to my business strategies. My agency increased revenue as well as good clients. Hamid always forces to professional ethics — biggest oath is never lie.",
+    text:   "I have learnt a lot from 7-Figure Agency Mindset A-Z by Hamid, gave me right directions to my business strategies. My agency increased revenue as well as good clients. Hamid always forces to professional ethics. Biggest oath is never lie.",
   },
   {
     name:   "Amina Zahoor",
@@ -81,7 +81,7 @@ const SMALL = [
     date:   "Jan 21, 2025",
     source: "trustpilot" as const,
     title:  "Roadmap toward a 7-figure agency",
-    text:   "So 7 Figure agency mindset A-Z by Hamid Mehmood is definitely a roadmap for those who don't have a mindset on what it takes to build a 7-Figure agency. This book has almost it all — from how to form your company to how to build your offer and sell it to other businesses as an agency owner.",
+    text:   "So 7 Figure agency mindset A-Z by Hamid Mehmood is definitely a roadmap for those who don't have a mindset on what it takes to build a 7-Figure agency. This book has almost it all: from how to form your company to how to build your offer and sell it to other businesses as an agency owner.",
   },
   {
     name:   "Hasnain Khalid",
@@ -90,7 +90,7 @@ const SMALL = [
     date:   "Mar 26, 2025",
     source: "trustpilot" as const,
     title:  "7 Figures agency mindset is a must-read",
-    text:   "7 Figures agency mindset is a must-read for anyone looking to scale their agency to seven figures. Hamid Mahmood breaks down the strategies, systems, and mindset shifts needed to achieve sustainable growth. Packed with real-world insights and actionable advice — a game-changer for agency owners ready to take their business to the next level!",
+    text:   "7 Figures agency mindset is a must-read for anyone looking to scale their agency to seven figures. Hamid Mahmood breaks down the strategies, systems, and mindset shifts needed to achieve sustainable growth. Packed with real-world insights and actionable advice, a game-changer for agency owners ready to take their business to the next level!",
   },
 ];
 
@@ -295,7 +295,7 @@ export function TestimonialsSection() {
             </h2>
             <p className={`ts-hd ts-hd3 ${inView ? "ts-in" : ""} text-[15px] leading-relaxed`}
               style={{ color: "rgba(255,255,255,0.45)" }}>
-              Agency owners across 12+ countries — unfiltered and unedited.
+              Agency owners across 12+ countries, unfiltered and unedited.
             </p>
           </div>
 
@@ -344,10 +344,9 @@ export function TestimonialsSection() {
           {/* Trust stats */}
           <div className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {[
-              { n: "500+", l: "Agency Owners"   },
-              { n: "12+",  l: "Countries"        },
-              { n: "4.9★", l: "Average Rating"   },
-              { n: "9",    l: "Verified Reviews" },
+              { n: "500+", l: "Agency Owners"  },
+              { n: "12+",  l: "Countries"       },
+              { n: "4.9★", l: "Average Rating"  },
             ].map(({ n, l }) => (
               <div key={l} className="flex flex-col items-center gap-1">
                 <span className="ts-stat-val">{n}</span>

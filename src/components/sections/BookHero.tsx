@@ -3,9 +3,9 @@ const NAVY = "#000025";
 const WHITE = "#FFFFFF";
 
 const bullets = [
-  "Read by agency owners across 12+ countries — from solo operators to 20-person teams",
-  "Covers the full agency lifecycle: foundation, client acquisition, scaling, and long-term legacy",
-  "Available in E-book (instant) and Hardcopy — both for $9.99",
+  "The complete A-to-Z blueprint for building a profitable digital marketing agency",
+  "Covers every stage: niche selection, client acquisition, team building, and scaling systems",
+  "Available in E-book (instant) and Hardcopy, both for $9.99",
 ];
 
 export function BookHero() {
@@ -134,7 +134,7 @@ export function BookHero() {
                 style={{ color: "#A8A8C0" }}
               >
                 The A-to-Z playbook for digital marketing agency owners who are
-                done improvising — and ready to build, sell, and scale with a
+                done improvising and ready to build, sell, and scale with a
                 real operating framework behind them.
               </p>
 
@@ -220,6 +220,17 @@ export function BookHero() {
                         "0 48px 80px rgba(0,0,0,0.55), 0 0 64px rgba(201,168,76,0.12)",
                     }}
                   />
+
+                  {/* Bestseller badge — top-left of book */}
+                  <div
+                    className="absolute -top-3 -left-4 z-20 rounded-full px-3 py-1.5 text-[10px] font-black shadow-xl"
+                    style={{
+                      backgroundColor: GOLD,
+                      color: NAVY,
+                    }}
+                  >
+                    #1 BESTSELLER
+                  </div>
 
                   {/* Overlay badge — bottom-right of book */}
                   <div

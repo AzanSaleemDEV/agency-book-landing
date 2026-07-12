@@ -9,9 +9,9 @@ const GOLD = "#C9A84C";
 const NAVY = "#000025";
 
 const BODY = [
-  "Hamid Mahmood didn't stumble into a seven-figure agency. He built it the hard way — a decade of client work, expensive mistakes, and the kind of clarity that only comes from doing the actual work at scale.",
-  "As founder of Software Pro Digital, he grew from solo operator to running a multi-seven-figure agency serving clients across 12 countries. Every system in this book exists because he needed it and couldn't find it anywhere else.",
-  "What you're holding is the manual he built along the way — written for the agency owner who is done guessing and ready to build something that lasts.",
+  "Hamid Mahmood didn't stumble into a seven-figure agency. He built it the hard way: a decade of client work, expensive mistakes, and the kind of clarity that only comes from doing the actual work at scale.",
+  "As founder of Software Pro Digital, he built one of the most respected digital marketing agencies in the region. Every system in this book exists because he needed it and couldn't find it anywhere else.",
+  "What you're holding is the manual he built along the way, written for the agency owner who is done guessing and ready to build something that lasts.",
 ];
 
 const STATS = [
@@ -217,7 +217,16 @@ export function AuthorSection() {
                 className="text-[17px] font-semibold leading-snug"
                 style={{ color: GOLD }}
               >
-                Founder, Software Pro Digital — 7-Figure Agency Builder
+                Founder,{" "}
+                <a
+                  href="https://hamidthepro.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: GOLD, textDecoration: "underline", textUnderlineOffset: "3px" }}
+                >
+                  Software Pro Digital
+                </a>
+                {" "}· 7-Figure Agency Builder
               </p>
 
               {/* Gold rule */}
