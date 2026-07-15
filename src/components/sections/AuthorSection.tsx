@@ -18,7 +18,7 @@ const STATS = [
   { prefix: "",  value: 8000, suffix: "+",  label: "Projects Delivered"        },
   { prefix: "",  value: 3000, suffix: "+",  label: "Clients Served"            },
   { prefix: "",  value: 200,  suffix: "+",  label: "Team Members"              },
-  { prefix: "",  value: 5,    suffix: ".0", label: "Clutch Rating"             },
+  { prefix: "",  value: 5,    suffix: "",   label: "Clutch Rating"             },
 ];
 
 // ─── stat item ────────────────────────────────────────────────────────────────

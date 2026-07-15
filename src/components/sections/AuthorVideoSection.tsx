@@ -6,6 +6,7 @@ import { Play } from "lucide-react";
 
 const GOLD = "#C9A84C";
 const NAVY = "#000025";
+const BG   = "#F8F7F4";
 
 const VIDEO_ID = "9VfNlehxdbw";
 const VIDEO_TITLE =
@@ -36,7 +37,7 @@ export function AuthorVideoSection() {
           border-radius: 16px;
           overflow: hidden;
           background: #000;
-          box-shadow: 0 0 0 1px rgba(201,168,76,0.25), 0 32px 64px rgba(0,0,0,0.55), 0 0 80px rgba(201,168,76,0.08);
+          box-shadow: 0 0 0 1px rgba(201,168,76,0.3), 0 2px 16px rgba(0,0,37,0.08), 0 12px 32px rgba(0,0,37,0.1);
         }
         .av-frame img {
           width: 100%;
@@ -84,7 +85,7 @@ export function AuthorVideoSection() {
 
       <section
         ref={ref}
-        style={{ backgroundColor: NAVY }}
+        style={{ backgroundColor: BG }}
         className="f-section overflow-hidden"
         aria-label="Video from the author"
       >
@@ -99,14 +100,14 @@ export function AuthorVideoSection() {
               Straight From Hamid
             </p>
             <h2
-              className={`av-item av-d2 ${inView ? "av-in" : ""} mb-5 f-h2 font-bold tracking-tight text-white`}
-              style={{ fontFamily: "var(--font-playfair)" }}
+              className={`av-item av-d2 ${inView ? "av-in" : ""} mb-5 f-h2 font-bold tracking-tight`}
+              style={{ color: NAVY, fontFamily: "var(--font-playfair)" }}
             >
               Watch the Financial Playbook Behind a 7-Figure Agency
             </h2>
             <p
               className={`av-item av-d3 ${inView ? "av-in" : ""} text-[17px] leading-relaxed`}
-              style={{ color: "rgba(255,255,255,0.55)" }}
+              style={{ color: "#6B6B80" }}
             >
               A short breakdown from Hamid himself on how the numbers actually work behind a seven-figure agency. Same operator, same systems, straight from the book.
             </p>
