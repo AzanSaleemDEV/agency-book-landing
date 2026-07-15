@@ -86,47 +86,35 @@ export function ScaleSection() {
         .sc-hd3.sc-in { animation-delay: 0.30s; }
 
         /*
-         * Two-layer card approach:
-         *   .sc-wrap  → entrance (opacity + translateY with stagger delay)
-         *   .sc-card  → hover (no delay, instant response)
+         * Vertical checklist/timeline layout — deliberately not a card
+         * grid, to break up the run of boxed grids in the sections
+         * around it (Start, Framework, Lead).
          */
         .sc-wrap {
           opacity: 0;
-          transform: translateY(28px);
+          transform: translateY(24px);
         }
         .sc-wrap.sc-in {
           opacity: 1;
           transform: translateY(0);
           transition:
-            opacity   0.55s ease-out var(--d, 0s),
-            transform 0.55s ease-out var(--d, 0s);
+            opacity   0.5s ease-out var(--d, 0s),
+            transform 0.5s ease-out var(--d, 0s);
         }
 
-        .sc-card {
-          background:    ${CARD};
-          border-top:    3px solid ${GOLD};
-          border-radius: 14px;
-          padding:       1.75rem;
-          height:        100%;
-          transition:
-            transform        0.22s ease,
-            box-shadow       0.22s ease,
-            border-top-color 0.22s ease;
-        }
-        .sc-card:hover {
-          transform:       translateY(-5px);
-          border-top-color: #E0C060;
-          box-shadow:
-            0 24px 52px rgba(0, 0, 0, 0.45),
-            0 0 0 1px rgba(201,168,76,0.18);
+        .sc-vline {
+          background: linear-gradient(to bottom, rgba(201,168,76,0.35), rgba(201,168,76,0.08));
         }
 
-        /* ── icon circle glow on hover ── */
         .sc-icon-wrap {
-          transition: background-color 0.22s ease;
+          background:    ${CARD};
+          border:        2px solid rgba(201,168,76,0.35);
+          transition:    border-color 0.22s ease, transform 0.22s ease, background 0.22s ease;
         }
-        .sc-card:hover .sc-icon-wrap {
-          background-color: rgba(201,168,76,0.22);
+        .sc-item:hover .sc-icon-wrap {
+          border-color: ${GOLD};
+          background:   rgba(201,168,76,0.14);
+          transform:    scale(1.06);
         }
 
         /* ── CTA ── */
@@ -176,48 +164,51 @@ export function ScaleSection() {
             </p>
           </div>
 
-          {/* ── 2 × 3 card grid ─────────────────────────────────────── */}
-          <div
-            ref={cardsRef}
-            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-          >
-            {cards.map(({ icon: Icon, title, body }, i) => (
-              <div
-                key={title}
-                className={`sc-wrap ${cardsIn ? "sc-in" : ""}`}
-                style={{ "--d": `${i * 0.1}s` } as React.CSSProperties}
-              >
-                <div className="sc-card">
+          {/* ── Vertical checklist ──────────────────────────────────── */}
+          <div ref={cardsRef} className="relative mx-auto max-w-3xl">
+            <div
+              className="sc-vline absolute top-2 bottom-2 hidden w-px sm:block"
+              style={{ left: "27px" }}
+              aria-hidden="true"
+            />
+            <div className="flex flex-col gap-10">
+              {cards.map(({ icon: Icon, title, body }, i) => (
+                <div
+                  key={title}
+                  className={`sc-wrap ${cardsIn ? "sc-in" : ""} sc-item flex items-start gap-5 sm:gap-6`}
+                  style={{ "--d": `${i * 0.1}s` } as React.CSSProperties}
+                >
                   {/* Icon */}
                   <div
-                    className="sc-icon-wrap mb-5 flex h-11 w-11 items-center justify-center rounded-xl"
-                    style={{ backgroundColor: "rgba(201,168,76,0.14)" }}
+                    className="sc-icon-wrap relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full"
                   >
                     <Icon
-                      className="h-5 w-5"
+                      className="h-6 w-6"
                       style={{ color: GOLD }}
                       strokeWidth={1.75}
                     />
                   </div>
 
-                  {/* Title */}
-                  <h3
-                    className="mb-2.5 text-[17px] font-bold leading-snug"
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {title}
-                  </h3>
+                  <div className="pt-2">
+                    {/* Title */}
+                    <h3
+                      className="mb-2 text-[17px] font-bold leading-snug"
+                      style={{ color: "#FFFFFF" }}
+                    >
+                      {title}
+                    </h3>
 
-                  {/* Body */}
-                  <p
-                    className="text-[14px] leading-relaxed"
-                    style={{ color: "rgba(255,255,255,0.55)" }}
-                  >
-                    {body}
-                  </p>
+                    {/* Body */}
+                    <p
+                      className="text-[14px] leading-relaxed"
+                      style={{ color: "rgba(255,255,255,0.55)" }}
+                    >
+                      {body}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* ── CTA ─────────────────────────────────────────────────── */}

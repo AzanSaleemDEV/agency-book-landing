@@ -41,7 +41,7 @@ function StatItem({ num, unit, label, trigger }: { num: number; unit: string; la
         {trigger ? <CountUp start={0} end={num} duration={1.8} useEasing onEnd={() => setDone(true)} /> : "0"}
       </p>
       <p className="text-[12px] font-black uppercase tracking-widest" style={{ color: NAVY }}>{unit}</p>
-      <p className="max-w-[140px] text-[12px] leading-snug" style={{ color: "#7070888" }}>{label}</p>
+      <p className="max-w-[140px] text-[12px] leading-snug" style={{ color: "#707088" }}>{label}</p>
     </div>
   );
 }
@@ -93,47 +93,45 @@ export function SaleSection() {
           font-family: var(--font-playfair);
         }
 
-        /* Pillar cards */
-        .sa2-pillar { opacity: 0; }
-        .sa2-pillar.sa2-in { animation: sa2-up 0.5s ease-out both; }
-
-        .sa2-card {
-          padding: 32px 28px 28px;
+        /*
+         * List panel — deliberately not a card grid. Framework already
+         * owns the "giant gold numeral in a white card" motif; reusing it
+         * here made the two sections feel identical, so this is a single
+         * bordered panel with numbered rows instead.
+         */
+        .sa2-list {
+          border:        1px solid rgba(0,0,37,0.08);
           border-radius: 16px;
-          border: 1px solid rgba(0,0,37,0.07);
-          background: #FAFAF8;
-          height: 100%;
-          position: relative;
-          transition: box-shadow .22s ease, transform .22s ease, border-color .22s ease;
+          overflow:      hidden;
+          background:    #ffffff;
         }
-        .sa2-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 28px;
-          right: 28px;
-          height: 2px;
-          background: linear-gradient(to right, ${GOLD}, transparent);
-          border-radius: 0 0 2px 2px;
-          opacity: 0;
-          transition: opacity .22s ease;
-        }
-        .sa2-card:hover {
-          box-shadow: 0 12px 40px rgba(0,0,37,0.08);
-          transform: translateY(-4px);
-          border-color: rgba(201,168,76,0.25);
-        }
-        .sa2-card:hover::before { opacity: 1; }
 
-        .sa2-pillar-num {
-          font-size: clamp(3rem, 5vw, 4.5rem);
-          font-weight: 900;
-          color: ${GOLD};
-          line-height: 1;
-          letter-spacing: -0.03em;
-          opacity: 0.35;
-          display: block;
-          margin-bottom: 16px;
+        .sa2-row {
+          display:       flex;
+          gap:           20px;
+          align-items:   flex-start;
+          padding:       26px 28px;
+          border-bottom: 1px solid rgba(0,0,37,0.07);
+          opacity:       0;
+          transition:    background-color 0.2s ease;
+        }
+        .sa2-row:last-child { border-bottom: none; }
+        .sa2-row.sa2-in { animation: sa2-up 0.5s ease-out both; }
+        .sa2-row:hover { background-color: rgba(201,168,76,0.04); }
+
+        .sa2-row-num {
+          display:         flex;
+          flex-shrink:     0;
+          align-items:     center;
+          justify-content: center;
+          width:           34px;
+          height:          34px;
+          margin-top:      2px;
+          border-radius:   9px;
+          background:      rgba(201,168,76,0.12);
+          color:           ${GOLD};
+          font-size:       13px;
+          font-weight:     900;
           font-variant-numeric: tabular-nums;
         }
 
@@ -206,18 +204,18 @@ export function SaleSection() {
             </div>
           </div>
 
-          {/* ── 3 Pillar cards ── */}
-          <div ref={pillRef} className="mb-16 grid gap-5 sm:grid-cols-3">
+          {/* ── Numbered list panel ── */}
+          <div ref={pillRef} className="sa2-list mx-auto mb-16 max-w-3xl">
             {PILLARS.map(({ num, title, body }, i) => (
               <div
                 key={num}
-                className={`sa2-pillar ${pillIn ? "sa2-in" : ""}`}
+                className={`sa2-row ${pillIn ? "sa2-in" : ""}`}
                 style={{ animationDelay: `${0.05 + i * 0.12}s` }}
               >
-                <div className="sa2-card">
-                  <span className="sa2-pillar-num" aria-hidden="true">{num}</span>
+                <span className="sa2-row-num" aria-hidden="true">{num}</span>
+                <div>
                   <h3
-                    className="mb-3 text-[17px] font-bold leading-snug"
+                    className="mb-1.5 text-[16px] font-bold leading-snug"
                     style={{ color: NAVY }}
                   >
                     {title}
