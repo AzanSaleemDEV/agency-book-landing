@@ -108,10 +108,10 @@ export function BookHero() {
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
 
             {/* ── LEFT COLUMN ───────────────────────────────────────────── */}
-            <div className="flex flex-col items-center gap-7 text-center sm:items-start sm:text-left">
+            <div className="flex flex-col items-center gap-7 text-center lg:items-start lg:text-left">
 
               {/* Badge */}
-              <div className="bh-item bh-d1 text-center sm:text-left">
+              <div className="bh-item bh-d1 text-center lg:text-left">
                 <span
                   style={{ backgroundColor: GOLD, color: NAVY }}
                   className="inline-block whitespace-nowrap rounded-full px-4 py-1.5 text-[9px] font-black tracking-[0.1em] uppercase sm:text-[11px] sm:tracking-[0.2em]"
@@ -158,7 +158,7 @@ export function BookHero() {
               </ul>
 
               {/* CTA buttons */}
-              <div className="bh-item bh-d5 flex flex-wrap items-center justify-center gap-4 sm:justify-start">
+              <div className="bh-item bh-d5 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
                 <a
                   href="https://hamidthepro.com/?add-to-cart=9853&quantity=1"
                   target="_blank"

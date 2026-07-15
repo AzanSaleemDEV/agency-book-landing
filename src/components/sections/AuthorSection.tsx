@@ -196,7 +196,7 @@ export function AuthorSection() {
             {/* ── RIGHT — Copy block ───────────────────────────────── */}
             <div
               ref={copyRef}
-              className={`as-copy-col ${copyIn ? "as-in" : ""} flex flex-col gap-6`}
+              className={`as-copy-col ${copyIn ? "as-in" : ""} flex flex-col items-center gap-6 text-center lg:items-start lg:text-left`}
             >
               {/* Label */}
               <p
