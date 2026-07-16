@@ -74,17 +74,27 @@ export function SaleSection() {
         .sa2-quote-wrap { opacity: 0; }
         .sa2-quote-wrap.sa2-in { animation: sa2-up 0.65s ease-out 0.1s both; }
 
+        /*
+         * Floating pull-quote mark instead of an in-flow glyph — serif
+         * quote characters carry a lot of built-in headroom above the
+         * visible stroke, which was reading as dead space at the top
+         * of the card. Taking it out of flow removes that gap.
+         */
         .sa2-qmark {
-          font-size: clamp(80px, 12vw, 140px);
+          position: absolute;
+          top: -18px;
+          left: 4px;
+          font-size: clamp(64px, 9vw, 112px);
           line-height: 0.75;
           color: ${GOLD};
           font-family: Georgia, "Times New Roman", serif;
-          opacity: 0.9;
-          display: block;
+          opacity: 0.85;
           user-select: none;
+          pointer-events: none;
         }
 
         .sa2-qtext {
+          position: relative;
           font-size: clamp(1.25rem, 2.5vw + 0.5rem, 2rem);
           font-weight: 700;
           font-style: italic;
@@ -197,7 +207,7 @@ export function SaleSection() {
               />
 
               <span className="sa2-qmark" aria-hidden="true">&ldquo;</span>
-              <p className="sa2-qtext mt-2 mb-4">{QUOTE}</p>
+              <p className="sa2-qtext mt-6 mb-4 sm:mt-8">{QUOTE}</p>
               <p className="text-[13px] font-bold uppercase tracking-[0.14em]" style={{ color: GOLD }}>
                 — Hamid Mahmood, Chapter 14
               </p>

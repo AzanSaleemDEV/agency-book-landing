@@ -112,10 +112,19 @@ export function StartSection() {
 
       <section
         style={{ backgroundColor: BG }}
-        className="f-section overflow-hidden"
+        className="relative f-section overflow-hidden"
         aria-label="Phase One — Start"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Watermark — large, low-opacity "7" mark filling the empty space beside the card grid */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/seven-logo-sd87fsdf-1024x887.webp"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-16 top-1/2 hidden w-[380px] -translate-y-1/2 opacity-[0.08] lg:block lg:w-[480px]"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* ── Header ──────────────────────────────────────────────── */}
           <div

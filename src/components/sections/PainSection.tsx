@@ -82,48 +82,58 @@ export function PainSection() {
         .ps-head-d2.ps-visible { animation-delay: 0.20s; }
         .ps-head-d3.ps-visible { animation-delay: 0.35s; }
 
-        /* Card stagger */
+        /*
+         * Editorial "page" cards — deliberately not the rounded-card
+         * plus colored-left-border plus icon-circle recipe (that combo
+         * is one of the most overused AI-template card patterns there
+         * is). Instead: sharp corners, a large ghost page numeral, and
+         * a thin underline that draws in on hover.
+         */
         .ps-card {
           opacity: 0;
           transform: translateY(32px);
           transition: opacity 0.55s ease-out, transform 0.55s ease-out;
           position: relative;
           background: #fff;
-          border-left: 3px solid ${GOLD};
-          border-radius: 12px;
-          padding: 2rem;
-          box-shadow: 0 2px 16px rgba(0,0,37,0.06), 0 1px 4px rgba(0,0,37,0.04);
+          border-radius: 3px;
+          padding: 2.25rem 2rem 2rem;
+          box-shadow: 0 1px 2px rgba(0,0,37,0.05), 0 1px 12px rgba(0,0,37,0.05);
           overflow: hidden;
         }
         .ps-card.ps-visible {
           opacity: 1;
           transform: translateY(0);
         }
-        .ps-card:nth-child(1) { transition-delay: 0s; }
-        .ps-card:nth-child(2) { transition-delay: 0.12s; }
+        .ps-card:nth-child(1) { transition-delay: 0s;    }
+        .ps-card:nth-child(2) { transition-delay: 0.12s; margin-top: 20px; }
         .ps-card:nth-child(3) { transition-delay: 0.24s; }
 
-        /* Gold border shimmer on hover */
-        .ps-card::before {
-          content: '';
+        /* Ghost page numeral — ties to "reasons 01/02/03" without a literal card grid clone */
+        .ps-card-num {
           position: absolute;
-          left: 0;
-          top: 0;
-          width: 3px;
-          height: 100%;
-          background: linear-gradient(
-            to bottom,
-            ${GOLD} 0%,
-            #fff8dd 45%,
-            ${GOLD} 55%,
-            ${GOLD} 100%
-          );
-          background-size: 100% 300%;
-          background-position: 0 100%;
-          transition: background-position 0.55s ease;
+          top: 10px;
+          right: 18px;
+          font-family: var(--font-playfair);
+          font-size: 68px;
+          font-weight: 700;
+          line-height: 1;
+          color: rgba(0,0,37,0.045);
+          user-select: none;
+          pointer-events: none;
         }
-        .ps-card:hover::before {
-          background-position: 0 -100%;
+
+        /* Underline draws in on hover instead of a border-shimmer */
+        .ps-card-rule {
+          position: relative;
+          display: inline-block;
+          height: 2px;
+          width: 28px;
+          background: ${GOLD};
+          margin-bottom: 14px;
+          transition: width 0.3s ease;
+        }
+        .ps-card:hover .ps-card-rule {
+          width: 52px;
         }
 
         /* Divider line reveal */
@@ -198,26 +208,29 @@ export function PainSection() {
             ref={cardsRef}
             className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {cards.map(({ icon: Icon, title, body }) => (
+            {cards.map(({ icon: Icon, title, body }, i) => (
               <div
                 key={title}
                 className={`ps-card ${cardsInView ? "ps-visible" : ""}`}
               >
-                {/* Gold icon circle */}
-                <div
-                  className="mb-5 flex h-11 w-11 items-center justify-center rounded-full"
-                  style={{ backgroundColor: `${GOLD}22` }}
-                >
-                  <Icon
-                    className="h-5 w-5"
-                    style={{ color: GOLD }}
-                    strokeWidth={1.75}
-                  />
-                </div>
+                {/* Ghost page numeral */}
+                <span className="ps-card-num" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                {/* Small inline icon — no circle background */}
+                <Icon
+                  className="relative mb-4 block h-6 w-6"
+                  style={{ color: GOLD }}
+                  strokeWidth={1.5}
+                />
+
+                {/* Underline */}
+                <span className="ps-card-rule" aria-hidden="true" />
 
                 {/* Title */}
                 <h3
-                  className="mb-3 text-[18px] font-bold leading-snug"
+                  className="relative mb-3 text-[18px] font-bold leading-snug"
                   style={{ color: NAVY, fontFamily: "var(--font-playfair)" }}
                 >
                   {title}
@@ -225,7 +238,7 @@ export function PainSection() {
 
                 {/* Body */}
                 <p
-                  className="text-[15px] leading-relaxed"
+                  className="relative text-[15px] leading-relaxed"
                   style={{ color: "#6B6B80" }}
                 >
                   {body}
