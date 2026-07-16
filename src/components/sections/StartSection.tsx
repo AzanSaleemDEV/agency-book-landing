@@ -81,22 +81,40 @@ export function StartSection() {
             transform 0.5s ease-out var(--d, 0s);
         }
 
-        /* Hover target — zero delay so hover is instant */
+        /*
+         * Dark glass cards with a ghost page numeral — same editorial
+         * family as the Pain section's numeral treatment, but tuned for
+         * this section's navy mood instead of bright white boxes.
+         */
         .ss-card {
-          background: #ffffff;
-          border-top: 3px solid ${GOLD};
-          border-radius: 12px;
-          padding: 1.5rem;
+          position: relative;
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 14px;
+          padding: 1.75rem;
           height: 100%;
+          overflow: hidden;
           transition:
-            transform        0.22s ease,
-            box-shadow       0.22s ease,
-            border-top-color 0.22s ease;
+            transform    0.22s ease,
+            border-color 0.22s ease,
+            background   0.22s ease;
         }
         .ss-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 16px 36px rgba(0,0,37,0.09), 0 3px 8px rgba(0,0,37,0.05);
-          border-top-color: #E0C060;
+          border-color: rgba(201,168,76,0.4);
+          background: rgba(255,255,255,0.05);
+        }
+        .ss-card-num {
+          position: absolute;
+          top: 6px;
+          right: 14px;
+          font-family: var(--font-playfair);
+          font-size: 54px;
+          font-weight: 700;
+          line-height: 1;
+          color: rgba(201,168,76,0.14);
+          user-select: none;
+          pointer-events: none;
         }
 
       `}</style>
@@ -202,7 +220,7 @@ export function StartSection() {
               </div>
 
               {/* Card grid */}
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {cards.map(({ title, body }, i) => (
                 <div
                   key={title}
@@ -210,18 +228,23 @@ export function StartSection() {
                   style={{ "--d": `${i * 0.1}s` } as React.CSSProperties}
                 >
                   <div className="ss-card">
+                    {/* Ghost page numeral */}
+                    <span className="ss-card-num" aria-hidden="true">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+
                     {/* Card title */}
                     <h3
-                      className="mb-2 text-[15px] font-bold leading-snug"
-                      style={{ color: NAVY }}
+                      className="relative mb-2 text-[15px] font-bold leading-snug"
+                      style={{ color: "#FFFFFF" }}
                     >
                       {title}
                     </h3>
 
                     {/* Card body */}
                     <p
-                      className="text-[14px] leading-relaxed"
-                      style={{ color: "#6B6B80" }}
+                      className="relative text-[14px] leading-relaxed"
+                      style={{ color: "rgba(255,255,255,0.55)" }}
                     >
                       {body}
                     </p>
