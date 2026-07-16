@@ -139,36 +139,66 @@ export function StartSection() {
               {/* Header */}
               <div
                 ref={headRef}
-                className={`ss-header ${headIn ? "ss-in" : ""} mb-14 max-w-2xl`}
+                className={`ss-header ${headIn ? "ss-in" : ""} mb-14 flex flex-col gap-10 lg:flex-row lg:items-start`}
               >
-                {/* Badges */}
-                <div className="mb-6 flex flex-wrap items-center gap-3">
-                  <span
-                    className="rounded-full px-4 py-1.5 text-[11px] font-black tracking-[0.18em] uppercase"
-                    style={{ backgroundColor: NAVY, color: GOLD }}
+                <div className="max-w-2xl">
+                  {/* Badges */}
+                  <div className="mb-6 flex flex-wrap items-center gap-3">
+                    <span
+                      className="rounded-full px-4 py-1.5 text-[11px] font-black tracking-[0.18em] uppercase"
+                      style={{ backgroundColor: NAVY, color: GOLD }}
+                    >
+                      🚀&nbsp; Phase One: Start
+                    </span>
+                    <span
+                      className="rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em]"
+                      style={{ border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.5)" }}
+                    >
+                      Chapters 1–9
+                    </span>
+                  </div>
+
+                  {/* Headline */}
+                  <h2
+                    className="mb-4 f-h2 font-bold tracking-tight"
+                    style={{ color: "#FFFFFF", fontFamily: "var(--font-playfair)" }}
                   >
-                    🚀&nbsp; Phase One: Start
-                  </span>
-                  <span
-                    className="rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em]"
-                    style={{ border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.5)" }}
-                  >
-                    Chapters 1–9
-                  </span>
+                    Most Agencies Fail in the First 90 Days. Here's Exactly Why.
+                  </h2>
+
+                  {/* Subheadline */}
+                  <p className="text-[17px] leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                    The decisions you make at the start of your agency (niche, positioning, pricing, systems) compound for years. Get them right early and everything else gets easier. Get them wrong and you'll be rebuilding forever.
+                  </p>
                 </div>
 
-                {/* Headline */}
-                <h2
-                  className="mb-4 f-h2 font-bold tracking-tight"
-                  style={{ color: "#FFFFFF", fontFamily: "var(--font-playfair)" }}
+                {/* Pull-quote — fills the space beside the header on wide
+                    screens with real editorial content instead of a stray
+                    numeral or a thin floating stat card */}
+                <div
+                  className="hidden shrink-0 rounded-2xl px-8 py-8 lg:block lg:w-[380px]"
+                  style={{ border: "1px solid rgba(201,168,76,0.18)", background: "rgba(255,255,255,0.03)" }}
                 >
-                  Most Agencies Fail in the First 90 Days. Here's Exactly Why.
-                </h2>
-
-                {/* Subheadline */}
-                <p className="text-[17px] leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
-                  The decisions you make at the start of your agency (niche, positioning, pricing, systems) compound for years. Get them right early and everything else gets easier. Get them wrong and you'll be rebuilding forever.
-                </p>
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      display: "block",
+                      fontFamily: "Georgia, 'Times New Roman', serif",
+                      fontSize: "56px",
+                      lineHeight: 0.6,
+                      color: GOLD,
+                      opacity: 0.85,
+                    }}
+                  >
+                    &ldquo;
+                  </span>
+                  <p
+                    className="text-[18px] leading-relaxed"
+                    style={{ color: "rgba(255,255,255,0.85)", fontStyle: "italic", fontFamily: "var(--font-playfair)" }}
+                  >
+                    The first 90 days aren&apos;t about working harder. They&apos;re about building the foundation before you&apos;re too busy to fix it.
+                  </p>
+                </div>
               </div>
 
               {/* Card grid */}
