@@ -13,12 +13,6 @@ export function BookHero() {
     <>
       {/* ── scoped styles ───────────────────────────────────────────────── */}
       <style>{`
-        /* Dot-matrix background drift */
-        @keyframes bh-grid-drift {
-          0%   { background-position: 0 0; }
-          100% { background-position: 32px 32px; }
-        }
-
         /* Stagger fade-up for left column items */
         @keyframes bh-fade-up {
           from { opacity: 0; transform: translateY(26px); }
@@ -37,17 +31,23 @@ export function BookHero() {
           50%       { transform: translateY(-12px) rotate(-1deg); }
         }
 
-        .bh-grid {
+        /* Diagonal color-split panel — echoes the diagonal bridges used
+           between other sections, instead of a generic dot-grid */
+        .bh-diagonal {
+          position: absolute;
+          inset: 0;
+          left: 32%;
+          background: linear-gradient(150deg, #000A3E 0%, #000625 60%, ${NAVY} 100%);
+          clip-path: polygon(22% 0, 100% 0, 100% 100%, 0% 100%);
+          pointer-events: none;
+        }
+
+        /* Subtle film-grain texture — adds a tactile, printed feel */
+        .bh-noise {
           position: absolute;
           inset: 0;
           pointer-events: none;
-          background-image: radial-gradient(
-            circle,
-            rgba(201, 168, 76, 0.055) 1px,
-            transparent 1px
-          );
-          background-size: 32px 32px;
-          animation: bh-grid-drift 20s linear infinite;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
         }
 
         /* Stagger helpers — opacity:0 + fill-mode:both keeps them hidden until anim starts */
@@ -91,8 +91,11 @@ export function BookHero() {
         className="relative overflow-hidden f-section-lg"
         aria-label="Hero"
       >
-        {/* Animated dot-matrix background */}
-        <div className="bh-grid" aria-hidden="true" />
+        {/* Diagonal color-split panel behind the book column */}
+        <div className="bh-diagonal hidden lg:block" aria-hidden="true" />
+
+        {/* Film-grain texture */}
+        <div className="bh-noise" aria-hidden="true" />
 
         {/* Radial vignette — softens edges */}
         <div
