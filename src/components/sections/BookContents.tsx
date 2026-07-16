@@ -141,20 +141,6 @@ export function BookContents() {
           background: rgba(255,255,255,0.055);
         }
 
-        /* Ghost roman numeral — each pillar is a "Part" of the book */
-        .bc-pillar-roman {
-          position: absolute;
-          top: -14px;
-          right: 4px;
-          font-family: var(--font-playfair);
-          font-size: 96px;
-          font-weight: 700;
-          line-height: 1;
-          color: rgba(201,168,76,0.07);
-          user-select: none;
-          pointer-events: none;
-        }
-
         .bc-pillar-icon {
           display: inline-flex;
           align-items: center;
@@ -222,9 +208,6 @@ export function BookContents() {
                   style={{ "--pd": `${pi * 0.2}s` } as React.CSSProperties}
                 >
                   <div className="bc-pillar-card">
-
-                    {/* Ghost roman numeral */}
-                    <span className="bc-pillar-roman" aria-hidden="true">{roman}</span>
 
                     {/* Icon */}
                     <div className="bc-pillar-icon relative">
