@@ -104,18 +104,6 @@ export function StartSection() {
           border-color: rgba(201,168,76,0.4);
           background: rgba(255,255,255,0.05);
         }
-        .ss-card-num {
-          position: absolute;
-          top: 6px;
-          right: 14px;
-          font-family: var(--font-playfair);
-          font-size: 54px;
-          font-weight: 700;
-          line-height: 1;
-          color: rgba(201,168,76,0.14);
-          user-select: none;
-          pointer-events: none;
-        }
 
       `}</style>
 
@@ -228,11 +216,6 @@ export function StartSection() {
                   style={{ "--d": `${i * 0.1}s` } as React.CSSProperties}
                 >
                   <div className="ss-card">
-                    {/* Ghost page numeral */}
-                    <span className="ss-card-num" aria-hidden="true">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-
                     {/* Card title */}
                     <h3
                       className="relative mb-2 text-[15px] font-bold leading-snug"
