@@ -90,7 +90,7 @@ export function StickyBar() {
               </span>
             </span>
             <span className="text-[12px] font-medium text-white/70 sm:text-[13px]">
-              By Hamid Mahmood, World CEO Rankings Honoree
+              Trusted by 500+ Agency Owners Worldwide
             </span>
           </div>
 
