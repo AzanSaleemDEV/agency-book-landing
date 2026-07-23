@@ -269,7 +269,7 @@ export function UrgencySection() {
             className={`ug-item ug-d2 ${inView ? "ug-in" : ""} mb-3 f-h2 font-black tracking-tight text-white`}
             style={{ fontFamily: "var(--font-playfair)" }}
           >
-            Get the Complete A-to-Z System
+            Get 7-Figure Agency Mindset A-Z
           </h2>
           <p
             className={`ug-item ug-d2 ${inView ? "ug-in" : ""} mb-10 text-[16px] font-medium`}

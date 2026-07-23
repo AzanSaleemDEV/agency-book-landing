@@ -3,7 +3,8 @@
 import { useInView } from "react-intersection-observer";
 
 const GOLD = "#C9A84C";
-const BG   = "#000D30";
+const NAVY = "#000025";
+const BG   = "#F8F7F4";
 const FB   = "#1877F2";
 const TP   = "#00B67A"; // Trustpilot green
 
@@ -273,13 +274,13 @@ export function TestimonialsSection() {
               What Readers Are Saying
             </p>
             <h2
-              className={`ts-hd ts-hd2 ${inView ? "ts-in" : ""} mb-4 f-h2 font-bold tracking-tight text-white`}
-              style={{ fontFamily: "var(--font-playfair)" }}
+              className={`ts-hd ts-hd2 ${inView ? "ts-in" : ""} mb-4 f-h2 font-bold tracking-tight`}
+              style={{ color: NAVY, fontFamily: "var(--font-playfair)" }}
             >
               Real Reviews. Real Results.
             </h2>
             <p className={`ts-hd ts-hd3 ${inView ? "ts-in" : ""} text-[15px] leading-relaxed`}
-              style={{ color: "rgba(255,255,255,0.45)" }}>
+              style={{ color: "#6B6B80" }}>
               Agency owners across 12+ countries, unfiltered and unedited.
             </p>
           </div>

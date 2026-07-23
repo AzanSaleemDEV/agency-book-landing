@@ -9,9 +9,8 @@ const GOLD = "#C9A84C";
 const NAVY = "#000025";
 
 const BODY = [
-  "Hamid Mahmood didn't stumble into a seven-figure agency. He built it the hard way: a decade of client work, expensive mistakes, and the kind of clarity that only comes from doing the actual work at scale.",
-  "As founder of Software Pro Digital, he built one of the most respected digital marketing agencies in the region. Every system in this book exists because he needed it and couldn't find it anywhere else.",
-  "What you're holding is the manual he built along the way, written for the agency owner who is done guessing and ready to build something that lasts.",
+  "Hamid Mahmood is an accomplished Digital Consultant, globally recognized CEO (World CEO Rankings – TWCR), and Founder of the top digital agencies HTMLPro, Ecom Development NYC, and Software Pro Digital. With over 1.5 decades of experience, Hamid is a visionary entrepreneur dedicated to empowering global business owners, freelancers, and agency professionals.",
+  "As the force behind top ranked agencies, Hamid excels in setting up delivery infrastructures, resulting in a 10X increase in revenue streams and stabilized offshore operations for hundreds of agencies, e-commerce stores, and large corporations.",
 ];
 
 const STATS = [
@@ -244,7 +243,7 @@ export function AuthorSection() {
                   <p
                     key={i}
                     className="leading-[1.75] text-[17px]"
-                    style={{ color: "rgba(255,255,255,0.75)", fontWeight: i === 2 ? 600 : 400 }}
+                    style={{ color: "rgba(255,255,255,0.75)", fontWeight: i === 1 ? 600 : 400 }}
                   >
                     {para}
                   </p>

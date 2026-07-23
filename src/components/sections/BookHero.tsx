@@ -3,7 +3,7 @@ const NAVY = "#000025";
 const WHITE = "#FFFFFF";
 
 const bullets = [
-  "The complete A-to-Z blueprint for building a profitable digital marketing agency",
+  "The complete 7-Figure Agency Mindset A-Z blueprint for building a profitable digital marketing agency",
   "Covers every stage: niche selection, client acquisition, team building, and scaling systems",
   "Available in E-book (instant) and Hardcopy, both for $9.99",
 ];
@@ -138,7 +138,7 @@ export function BookHero() {
                 className="bh-item bh-d3 f-sub"
                 style={{ color: "#A8A8C0" }}
               >
-                The A-to-Z playbook for digital marketing agency owners who are
+                7-Figure Agency Mindset A-Z is the playbook for digital marketing agency owners who are
                 done improvising and ready to build, sell, and scale with a
                 real operating framework behind them.
               </p>

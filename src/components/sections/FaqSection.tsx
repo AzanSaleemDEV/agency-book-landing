@@ -10,7 +10,7 @@ const NAVY = "#000025";
 const FAQS = [
   {
     q: "Is this for beginners or experienced agency owners?",
-    a: "Both. The A-to-Z framework starts from the foundation, so if you're new, you'll build correctly from day one. If you're already running an agency, you'll identify exactly which systems are missing or broken and fix them fast. Most readers say the first 3 chapters alone were worth 10x the price.",
+    a: "Both. The 7-Figure Agency Mindset A-Z framework starts from the foundation, so if you're new, you'll build correctly from day one. If you're already running an agency, you'll identify exactly which systems are missing or broken and fix them fast. Most readers say the first 3 chapters alone were worth 10x the price.",
   },
   {
     q: "I've read other agency books. How is this different?",
