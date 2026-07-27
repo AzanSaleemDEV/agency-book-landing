@@ -62,33 +62,6 @@ export function FrameworkSection() {
         .fw-hd2.fw-in { animation-delay: 0.20s; }
         .fw-hd3.fw-in { animation-delay: 0.35s; }
 
-        /* ── dashed connecting line — draws L→R on scroll ── */
-        .fw-line-track {
-          position: absolute;
-          /* sits at the vertical center of the step-number text (approx 56px from top of card) */
-          top: 56px;
-          left: 18%;
-          right: 18%;
-          height: 2px;
-          overflow: hidden;
-          pointer-events: none;
-          z-index: 0;
-        }
-        .fw-line-fill {
-          height: 100%;
-          width: 0;
-          background-image: repeating-linear-gradient(
-            to right,
-            ${GOLD}   0px,  ${GOLD}   14px,
-            transparent 14px, transparent 22px
-          );
-          filter: drop-shadow(0 0 4px rgba(201,168,76,0.55));
-          transition: width 1.1s ease-out 0.5s;
-        }
-        .fw-line-fill.fw-in {
-          width: 100%;
-        }
-
         /* ── step cards — stagger up ── */
         .fw-card {
           opacity: 0;
@@ -165,11 +138,6 @@ export function FrameworkSection() {
 
           {/* ── Steps grid + connecting line ────────────────────────── */}
           <div ref={stepsRef} className="relative mt-16">
-
-            {/* Dashed line — desktop only */}
-            <div className="fw-line-track hidden lg:block" aria-hidden="true">
-              <div className={`fw-line-fill ${stepsIn ? "fw-in" : ""}`} />
-            </div>
 
             {/* Three columns */}
             <div className="grid gap-6 sm:grid-cols-3">
