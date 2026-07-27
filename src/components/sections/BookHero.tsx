@@ -1,14 +1,20 @@
+"use client";
+
+import { usePrice } from "@/lib/PriceContext";
+
 const GOLD = "#C9A84C";
 const NAVY = "#000025";
 const WHITE = "#FFFFFF";
 
-const bullets = [
-  "The complete 7-Figure Agency Mindset A-Z blueprint for building a profitable digital marketing agency",
-  "Covers every stage: niche selection, client acquisition, team building, and scaling systems",
-  "Available in E-book (instant) and Hardcopy, both for $9.99",
-];
-
 export function BookHero() {
+  const { price } = usePrice();
+
+  const bullets = [
+    "The complete 7-Figure Agency Mindset A-Z blueprint for building a profitable digital marketing agency",
+    "Covers every stage: niche selection, client acquisition, team building, and scaling systems",
+    `Available in E-book (instant) and Hardcopy, both for $${price}`,
+  ];
+
   return (
     <>
       {/* ── scoped styles ───────────────────────────────────────────────── */}
@@ -171,7 +177,7 @@ export function BookHero() {
                   style={{ backgroundColor: GOLD, color: NAVY }}
                   className="rounded-xl px-7 py-3.5 text-[15px] font-black tracking-wide shadow-lg transition-opacity hover:opacity-90"
                 >
-                  Get Your Copy for $9.99
+                  Get Your Copy for ${price}
                 </a>
 
                 <a

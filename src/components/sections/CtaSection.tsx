@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "react-intersection-observer";
+import { usePrice } from "@/lib/PriceContext";
 
 // ─── constants ────────────────────────────────────────────────────────────────
 const GOLD = "#C9A84C";
@@ -16,6 +17,7 @@ const TRUST = [
 
 // ─── component ────────────────────────────────────────────────────────────────
 export function CtaSection() {
+  const { price } = usePrice();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.12 });
 
   return (
@@ -273,7 +275,7 @@ export function CtaSection() {
           >
             Hamid spent a decade building a multi-seven-figure agency before writing a single page of this book.
             Every system in it came from actual client work, actual failures, and actual money at stake.
-            You get all of that for $9.99.
+            You get all of that for ${price}.
           </p>
 
           {/* ── CTA Buttons ──────────────────────────────────────────── */}
@@ -288,7 +290,7 @@ export function CtaSection() {
                 rel="noopener noreferrer"
                 className="ct-btn-gold"
               >
-                Get the E-book for $9.99
+                Get the E-book for ${price}
               </a>
             </div>
 

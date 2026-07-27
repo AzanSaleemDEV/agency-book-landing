@@ -3,40 +3,42 @@
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { ChevronDown } from "lucide-react";
+import { usePrice } from "@/lib/PriceContext";
 
 const GOLD = "#C9A84C";
 const NAVY = "#000025";
 
-const FAQS = [
-  {
-    q: "Is this for beginners or experienced agency owners?",
-    a: "Both. The 7-Figure Agency Mindset A-Z framework starts from the foundation, so if you're new, you'll build correctly from day one. If you're already running an agency, you'll identify exactly which systems are missing or broken and fix them fast. Most readers say the first 3 chapters alone were worth 10x the price.",
-  },
-  {
-    q: "I've read other agency books. How is this different?",
-    a: "Most agency books are written by marketers. This one is written by an operator who built a multi-seven-figure agency. The difference is specificity: you get actual systems, actual scripts, and actual frameworks, not motivational advice wrapped in case studies.",
-  },
-  {
-    q: "What's the difference between the e-book and hardcopy?",
-    a: "The content is identical. The e-book is instant: you get a download link the moment you order, accessible on any device. The hardcopy ships worldwide and takes 5 to 10 business days depending on your location. For $9.99 you can grab both formats from the checkout page.",
-  },
-  {
-    q: "What if I'm just starting out and don't have clients yet?",
-    a: "Perfect timing. The Start section of the book covers exactly how to land your first clients using positioning and outreach systems Hamid built from scratch. You'll skip the guessing phase that costs most agency owners 12 to 18 months of wasted momentum.",
-  },
-  {
-    q: "How quickly will I see results after reading?",
-    a: "Readers report implementing their first system changes within 48 hours. The book is structured for action: each chapter ends with a clear implementation checklist. Some use it as a weekend intensive; others work through one chapter per week. Either way, you'll know exactly what to fix first.",
-  },
-  {
-    q: "Is $9.99 really the final price?",
-    a: "For now, yes. This is a limited-time launch price. Hamid intends to raise it to the standard retail price once the launch window closes, so the sooner you grab it, the more you save.",
-  },
-];
-
 export function FaqSection() {
+  const { price } = usePrice();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const [open, setOpen] = useState<number | null>(null);
+
+  const FAQS = [
+    {
+      q: "Is this for beginners or experienced agency owners?",
+      a: "Both. The 7-Figure Agency Mindset A-Z framework starts from the foundation, so if you're new, you'll build correctly from day one. If you're already running an agency, you'll identify exactly which systems are missing or broken and fix them fast. Most readers say the first 3 chapters alone were worth 10x the price.",
+    },
+    {
+      q: "I've read other agency books. How is this different?",
+      a: "Most agency books are written by marketers. This one is written by an operator who built a multi-seven-figure agency. The difference is specificity: you get actual systems, actual scripts, and actual frameworks, not motivational advice wrapped in case studies.",
+    },
+    {
+      q: "What's the difference between the e-book and hardcopy?",
+      a: `The content is identical. The e-book is instant: you get a download link the moment you order, accessible on any device. The hardcopy ships worldwide and takes 5 to 10 business days depending on your location. For $${price} you can grab both formats from the checkout page.`,
+    },
+    {
+      q: "What if I'm just starting out and don't have clients yet?",
+      a: "Perfect timing. The Start section of the book covers exactly how to land your first clients using positioning and outreach systems Hamid built from scratch. You'll skip the guessing phase that costs most agency owners 12 to 18 months of wasted momentum.",
+    },
+    {
+      q: "How quickly will I see results after reading?",
+      a: "Readers report implementing their first system changes within 48 hours. The book is structured for action: each chapter ends with a clear implementation checklist. Some use it as a weekend intensive; others work through one chapter per week. Either way, you'll know exactly what to fix first.",
+    },
+    {
+      q: `Is $${price} really the final price?`,
+      a: "For now, yes. This is a limited-time launch price. Hamid intends to raise it to the standard retail price once the launch window closes, so the sooner you grab it, the more you save.",
+    },
+  ];
 
   return (
     <>
@@ -169,7 +171,7 @@ export function FaqSection() {
           <div className="mt-14 text-center">
             <p className="mb-6 text-[16px]" style={{ color: "rgba(0,0,37,0.48)" }}>
               Still on the fence? Your entire investment is just{" "}
-              <span style={{ color: GOLD, fontWeight: 700 }}>$9.99</span>.
+              <span style={{ color: GOLD, fontWeight: 700 }}>${price}</span>.
               That&rsquo;s less than a coffee. The risk is zero.
             </p>
             <a
@@ -199,7 +201,7 @@ export function FaqSection() {
                 (e.currentTarget as HTMLAnchorElement).style.opacity = "1";
               }}
             >
-              Get My Copy for $9.99
+              Get My Copy for ${price}
             </a>
           </div>
 

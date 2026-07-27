@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { cookies } from "next/headers";
+import { PriceProvider } from "@/lib/PriceContext";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,14 +30,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const country = (await cookies()).get("country")?.value ?? "";
+
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body>{children}</body>
+      <body>
+        <PriceProvider country={country}>{children}</PriceProvider>
+      </body>
     </html>
   );
 }

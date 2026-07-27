@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { usePrice } from "@/lib/PriceContext";
 
 // ─── constants ────────────────────────────────────────────────────────────────
 const GOLD = "#C9A84C";
@@ -8,6 +9,7 @@ const NAVY = "#000025";
 
 // ─── component ────────────────────────────────────────────────────────────────
 export function StickyBar() {
+  const { price } = usePrice();
   const [visible,   setVisible]   = useState(false);
   const [barHeight, setBarHeight] = useState(64);
   const barRef = useRef<HTMLDivElement>(null);
@@ -101,8 +103,8 @@ export function StickyBar() {
             rel="noopener noreferrer"
             className="st-cta"
           >
-            <span className="sm:hidden">Get it $9.99</span>
-            <span className="hidden sm:inline">Get the Book for $9.99&nbsp;→</span>
+            <span className="sm:hidden">Get it ${price}</span>
+            <span className="hidden sm:inline">Get the Book for ${price}&nbsp;→</span>
           </a>
 
         </div>

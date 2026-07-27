@@ -2,6 +2,7 @@
 
 import { useInView } from "react-intersection-observer";
 import { Rocket, Handshake, TrendingUp, type LucideIcon } from "lucide-react";
+import { usePrice } from "@/lib/PriceContext";
 
 // ─── constants ────────────────────────────────────────────────────────────────
 const GOLD = "#C9A84C";
@@ -40,6 +41,7 @@ const steps: {
 
 // ─── component ────────────────────────────────────────────────────────────────
 export function FrameworkSection() {
+  const { price } = usePrice();
   const { ref: headRef,  inView: headIn  } = useInView({ triggerOnce: true, threshold: 0.25 });
   const { ref: stepsRef, inView: stepsIn } = useInView({ triggerOnce: true, threshold: 0.15 });
 
@@ -236,7 +238,7 @@ export function FrameworkSection() {
               className="rounded-xl px-9 py-4 text-[15px] font-black tracking-wide shadow-md transition-opacity hover:opacity-90"
               style={{ backgroundColor: GOLD, color: NAVY }}
             >
-              Get the Full Blueprint for $9.99
+              Get the Full Blueprint for ${price}
             </a>
           </div>
 
